@@ -1,3 +1,6 @@
+[![Build Status](https://img.shields.io/travis/CradleAndGrave/CradleAndGrave.svg?style=flat-square)](https://travis-ci.org/CradleAndGrave/CradleAndGrave)
+[![Coverage Status](https://img.shields.io/coveralls/CradleAndGrave/CradleAndGrave.svg?style=flat-square)](https://coveralls.io/github/CradleAndGrave/CradleAndGrave?branch=master)
+
 [![Stories in Ready](https://badge.waffle.io/CradleAndGrave/CradleAndGrave.png?label=ready&title=Ready)](https://waffle.io/CradleAndGrave/CradleAndGrave?utm_source=badge)
 # Yerba Buena
 
@@ -7,7 +10,7 @@ A superpowered approach to electronic medical records.
 
   - __Product Owner__: Ash Woodall
   - __Scrum Master__: Tim Roy
-  - __Development Team Members__: Shehbaz, Zeus Esquivel, Tim Roy, Ash Woodall
+  - __Development Team Members__: Zeus Esquivel, Tim Roy, Shehbaz Sherwani, Ash Woodall
 
 ## Table of Contents
 
@@ -21,10 +24,11 @@ A superpowered approach to electronic medical records.
 
 ## Usage
 
-> Some usage instructions
+Add `/node_modules/` and `/coverage/` to your `.gitignore`.
 
 ## Requirements
 
+- Mongoose/Mongo
 - Express
 - React
 - Redux
@@ -32,21 +36,20 @@ A superpowered approach to electronic medical records.
 
 ## Development
 
-### Installing Dependencies
+### Installing Dependencies and Starting
 
 From within the root directory:
 
-```sh
-sudo npm install -g bower
-npm install
-bower install
+```
+yarn install && yarn start
 ```
 
 ### Roadmap
 
-View the project roadmap [here](LINK_TO_PROJECT_ISSUES)
+View the project roadmap [here](https://github.com/CradleAndGrave/CradleAndGrave/issues)
 
 
 ## Contributing
 
-See [CONTRIBUTING.md](https://github.com/unexpected-lion/ourglass/blob/master/contributing.md) for contribution guidelines.
+See [CONTRIBUTING.md](https://github.com/CradleAndGrave/CradleAndGrave/blob/master/CONTRIBUTING.md) for contribution guidelines.
+See [STYLE-GUIDE.md](https://github.com/CradleAndGrave/CradleAndGrave/blob/master/STYLE-GUIDE.md) for style guidelines.
