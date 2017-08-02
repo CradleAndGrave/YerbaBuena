@@ -1,6 +1,7 @@
 [![Build Status](https://img.shields.io/travis/CradleAndGrave/CradleAndGrave.svg?style=flat-square)](https://travis-ci.org/CradleAndGrave/CradleAndGrave)
 [![Coverage Status](https://img.shields.io/coveralls/CradleAndGrave/CradleAndGrave.svg?style=flat-square)](https://coveralls.io/github/CradleAndGrave/CradleAndGrave?branch=master)
 
+[![Stories in Ready](https://badge.waffle.io/CradleAndGrave/CradleAndGrave.png?label=ready&title=Ready)](https://waffle.io/CradleAndGrave/CradleAndGrave?utm_source=badge)
 # Yerba Buena
 
 A superpowered approach to electronic medical records.
