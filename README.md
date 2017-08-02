@@ -1,3 +1,6 @@
+[![Build Status](https://img.shields.io/travis/CradleAndGrave/CradleAndGrave.svg?style=flat-square)](https://travis-ci.org/CradleAndGrave/CradleAndGrave)
+[![Coverage Status](https://img.shields.io/coveralls/CradleAndGrave/CradleAndGrave.svg?style=flat-square)](https://coveralls.io/github/CradleAndGrave/CradleAndGrave?branch=master)
+
 # Yerba Buena
 
 A superpowered approach to electronic medical records.
@@ -20,7 +23,7 @@ A superpowered approach to electronic medical records.
 
 ## Usage
 
-> Some usage instructions
+Add `/node_modules/` and `/coverage/` to your `.gitignore`.
 
 ## Requirements
 

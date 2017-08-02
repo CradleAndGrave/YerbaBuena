@@ -1,0 +1,38 @@
+{
+  "name": "CradleAndGrave",
+  "version": "1.0.0",
+  "description": "A superpowered approach to electronic medical records",
+  "main": "index.js",
+  "repository": "https://github.com/coyotespike/CradleAndGrave",
+  "author": "Timothy Roy <roy.tim@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "yarn dev:start",
+    "dev:start": "nodemon -e js,jsx --ignore lib --ignore dist --exec babel-node src/server",
+    "lint": "eslint src webpack.config.babel.js --ext .js,.jsx",
+    "test": "yarn lint && flow && jest --coverage",
+    "travis-test": "yarn test && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "prepush": "yarn test"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-jest": "^20.0.3",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-flow": "^6.23.0",
+    "eslint": "^4.3.0",
+    "eslint-config-airbnb-base": "^11.3.1",
+    "eslint-plugin-flowtype": "^2.35.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.1.0",
+    "flow-bin": "^0.52.0",
+    "husky": "^0.14.3",
+    "jest": "^20.0.4",
+    "nodemon": "^1.11.0"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.23.0",
+    "express": "^4.15.3"
+  }
+}

@@ -380,3 +380,22 @@ When writing any block of code that is logically subordinate to the line immedia
     <!-- bad -->
     <script src="a.js" type="text/javascript"></script>
     ```
+
+### General
+From @brkwtz on Twitter:
+```
+I have refactored
+the code
+that was in
+ur repo
+
+& which
+u were probably
+going
+to deploy
+
+Forgive me
+it doesn't work now
+but it
+looks great
+```

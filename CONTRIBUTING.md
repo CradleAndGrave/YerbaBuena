@@ -33,3 +33,11 @@ We communicate in Slack, with standups via Google Hangout if remote.
 We use Waffle.io, which adds Slack notifications, opens and closes issues, assigns devs, and allows GitHub comments.
 
 Most product communication occurs in GitHub issue comments, or in our Slack channel.
+
+- During the day, we create issues with user stories to suggest features.
+- In the afternoon standup, we assign points/complexity to the tasks.
+- Product owner assigns priorities to the tasks.
+- In the morning standup, we move tasks to the ready board to add them to the current sprint.
+- As assigned and checked out, we move tasks to the in progress board.
+
+(Be sure to mention the issue number in your commit message, so that Waffle.io moves the associated issue)
