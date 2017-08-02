@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/CradleAndGrave/CradleAndGrave.png?label=ready&title=Ready)](https://waffle.io/CradleAndGrave/CradleAndGrave?utm_source=badge)
 # Yerba Buena
 
 A superpowered approach to electronic medical records.
