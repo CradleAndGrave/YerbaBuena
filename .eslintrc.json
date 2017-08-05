@@ -9,5 +9,9 @@
   ],
   "plugins": [
     "flowtype"
-  ]
+  ],
+  "rules": {
+    "react/jsx-curly-spacing": [0, "off"],
+    "comma-dangle": [0, "off"]
+  }
 }
