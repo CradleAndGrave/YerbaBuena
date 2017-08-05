@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "A superpowered approach to electronic medical records",
   "main": "index.js",
-  "repository": "https://github.com/coyotespike/CradleAndGrave",
-  "author": "Timothy Roy <roy.tim@gmail.com>",
+  "repository": "https://github.com/CradleAndGrave/CradleAndGrave",
+  "author": "Cradle And Grave Co <roy.tim@gmail.com>",
   "license": "MIT",
   "scripts": {
     "start": "yarn dev:start",
@@ -18,6 +18,7 @@
     "babel-cli": "^6.24.1",
     "babel-eslint": "^7.2.3",
     "babel-jest": "^20.0.3",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-flow": "^6.23.0",
     "eslint": "^4.3.0",
@@ -33,6 +34,7 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.23.0",
-    "express": "^4.15.3"
+    "express": "^4.15.3",
+    "react-redux": "^5.0.5"
   }
 }
