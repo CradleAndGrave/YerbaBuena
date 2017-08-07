@@ -1,22 +1,28 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
-import { Router, Route, browserHistory } from 'react-router';
-import App from './App';
+// eslint-disable-next-line
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { createStore } from 'redux';
+
+import todoApp from '../models/index';
+import { App, exampleView } from './App';
+
+const store = createStore(todoApp);
 
 // Add more routes like:
 // <Route path="/dashboard" component={dashboard} />
 
-const Root = ({ store }) => (
+// Check in App.jsx at the end for Link examples! Way easy.
+
+const Root = () => (
   <Provider store={store}>
-    <Router history={browserHistory}>
-      <Route path="/" component={App} />
+    <Router>
+      <div>
+        <Route exact path="/" component={App} />
+        <Route path="/example" component={exampleView} />
+      </div>
     </Router>
   </Provider>
 );
-
-Root.propTypes = {
-  store: PropTypes.shape.isRequired,
-};
 
 export default Root;
