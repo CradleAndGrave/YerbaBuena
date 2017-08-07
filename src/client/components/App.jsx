@@ -1,5 +1,6 @@
 /* eslint-disable */
-import 'react';
+import { Link } from 'react-router-dom';
+import React from 'react';
 import { connect } from 'react-redux';
 
 // Okay, our Root component has made the store available to every component at every level
@@ -51,7 +52,16 @@ const ToDoList = ({ onClick, users }) => (
 // This is a new component now, connected to our Redux store, and it's what we actually use.
 const VisibleTodoList = connect(mapStateToProps, mapDispatchToProps)(ToDoList);
 
+const App = () =>
+      <div>
+      <Link to="/example">Example</Link>
+      <h1>Hello React!</h1>
+      </div>;
 
-const App = () => <h1>Hello React!</h1>;
+const exampleView = () =>
+      <div>
+      <Link to="/">Landing Page</Link>
+      <h1>What a beautiful view!</h1>
+      </div>;
 
-export { VisibleTodoList, App };
+export { VisibleTodoList, App, exampleView };
