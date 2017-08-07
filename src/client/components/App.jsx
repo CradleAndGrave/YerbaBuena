@@ -48,7 +48,10 @@ const ToDoList = ({ onClick, users }) => (
 );
 
 // Connect our two helper functions to our component.
-const VisibleTodoList = connect(mapStateToProps, mapDispatchToProps)(TodoList);
-
 // This is a new component now, connected to our Redux store, and it's what we actually use.
-export default VisibleTodoList;
+const VisibleTodoList = connect(mapStateToProps, mapDispatchToProps)(ToDoList);
+
+
+const App = () => <h1>Hello React!</h1>;
+
+export { VisibleTodoList, App };
