@@ -8,7 +8,7 @@ import addPatient from '../models/actions';
 const Patients = ({ patients, onPatientClick }) => (
   <div>
     {patients.map(patient =>
-      (<div role="presentation" onClick={ onPatientClick(patient) } key={ patient.id }>
+      (<div role="presentation" onClick={() => onPatientClick(patient) } key={ patient.id }>
         <Patient key={ patient.id } patient={ patient } />
       </div>)
     )}
@@ -39,6 +39,14 @@ const mapDispatchToProps = (dispatch) => {
     }
   };
 };
+
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     onPatientClick: () => {
+//       console.log('hello');
+//     }
+//   };
+// };
 
 const PatientList = connect(mapStateToProps, mapDispatchToProps)(Patients);
 
