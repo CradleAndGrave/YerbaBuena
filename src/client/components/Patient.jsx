@@ -14,4 +14,5 @@ Patient.propTypes = {
   lastName: PropTypes.string.isRequired
 };
 
+
 export default Patient;
