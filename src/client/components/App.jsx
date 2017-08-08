@@ -41,9 +41,7 @@ const mapDispatchToProps = dispatch => {
 
 // Here's our original component.
 const ToDoList = ({ onClick, users }) => (
-  <div
-    onClick={onClick}
-  >
+  <div onClick={onClick}>
     {users}
   </div>
 );
@@ -55,7 +53,11 @@ const VisibleTodoList = connect(mapStateToProps, mapDispatchToProps)(ToDoList);
 const App = () =>
       <div>
       <Link to="/example">Example</Link>
-      <h1>Hello React!</h1>
+      <br></br>
+      <Link to="/todos">ToDoList</Link>
+      <br></br>
+      <Link to="/patients">Patient List</Link>
+      <h1>Hello React!!!</h1>
       </div>;
 
 const exampleView = () =>

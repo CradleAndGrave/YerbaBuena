@@ -15,8 +15,6 @@ const wrapApp = AppComponent =>
     <AppComponent />
   </AppContainer>);
 
-
-// render(<Root store={store} />, document.getElementById(APP_CONTAINER_SELECTOR));
 render(wrapApp(Root), rootEl);
 
 if (module.hot) {
