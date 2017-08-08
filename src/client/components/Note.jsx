@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// TODO: update call to redux store to populate fields
+//TODO: update call to redux store to populate fields
 
 const Note = ({ note, noteDate }) => (
   <div>

@@ -1,8 +1,8 @@
 import React from 'react';
 
-// TODO: update call to redux store to populate fields
-// TODO: Flexbox
-// TODO: update logout route
+//TODO: update call to redux store to populate fields
+//TODO: Flexbox
+//TODO: update logout route
 
 const Header = () => (
   <div>

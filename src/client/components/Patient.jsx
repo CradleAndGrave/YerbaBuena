@@ -13,4 +13,5 @@ Patient.propTypes = {
   patient: PropTypes.shape.isRequired,
 };
 
+
 export default Patient;
