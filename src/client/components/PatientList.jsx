@@ -1,45 +1,39 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Patient from './Patient';
 import { connect } from 'react-redux';
-
-// TODO: update call to redux store to populate fields
+import Patient from './Patient';
+import addPatient from '../models/actions';
 
 const Patients = ({ patients, onPatientClick }) => (
   <div>
     {patients.map(patient =>
-                  <div onClick={onPatientClick} key={ patient.id }><Patient key={ patient.id } patient={ patient } /></div>
-                 )}
+      (<div role="presentation" onClick={ onPatientClick(patient) } key={ patient.id }>
+        <Patient key={ patient.id } patient={ patient } />
+      </div>)
+    )}
   </div>
 );
 
 Patients.propTypes = {
   patients: PropTypes.arrayOf(PropTypes.shape).isRequired,
+  onPatientClick: PropTypes.func.isRequired
 };
 
 /*
-  mapStateToProps below assumes our state looks like:
-  {
-  patients: [
-  {id: xxxx
-  firstName: xxx
-  lastName: xxx
-  }
-  ]
-  }
-
   I am just getting all the patients, not filtering by visibility or something.
   Next we probably will want to filter by patients assigned to a provider.
 */
 
-const mapStateToProps = state => {
+// eslint-disable-next-line arrow-body-style
+const mapStateToProps = (state) => {
   return { patients: state.patients };
 };
 
 // This function will send, dispatch, state to our store.
-const mapDispatchToProps = dispatch => {
+// eslint-disable-next-line arrow-body-style
+const mapDispatchToProps = (dispatch) => {
   return {
-    onPatientClick: id => {
+    onPatientClick: ({ firstName, lastName }) => {
       dispatch(addPatient(firstName, lastName));
     }
   };

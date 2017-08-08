@@ -12,18 +12,21 @@ import PatientList from './PatientList';
 
 // This window.__ thing makes Redux DevTools work in development!
 // If you don't have it, it's a Chrome extension, super nice
-const store = createStore(allReducers,
-                         window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+const store = createStore(
+  allReducers,
+  // eslint-disable-next-line
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 // this is going to be our Ajax request to get the patients data into our store.
 // It will live in another file and be more complex than just addPatient.
 // We probably still dispatch it right here though.
 // for now, a little dummy data.
-var patients = [{firstName: "Ash", lastName: "Woodall"},
-                {firstName: "Zeus", lastName: "Esquivel"},
-                {firstName: "Tim", lastName: "Roy"},
-                {firstName: "Shehbaz", lastName: "Sherwani"},
-               ]
+const patients = [
+  { firstName: 'Ash', lastName: 'Woodall' },
+  { firstName: 'Zeus', lastName: 'Esquivel' },
+  { firstName: 'Tim', lastName: 'Roy' },
+  { firstName: 'Shehbaz', lastName: 'Sherwani' },
+];
 
 patients.map(patient => store.dispatch(addPatient(patient.firstName, patient.lastName)));
 
