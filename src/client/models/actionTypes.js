@@ -1,3 +1,5 @@
 const ADD_TODO = 'ADD_TODO';
 
-export default ADD_TODO;
+const ADD_PATIENT = 'ADD_PATIENT';
+
+export { ADD_TODO, ADD_PATIENT };

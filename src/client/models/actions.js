@@ -1,21 +1,25 @@
 /* eslint-disable */
 
-const nextTodoId = 0;
-// The below is ES6 object shorthand.
-// It will add a property
-// text: text
+import { ADD_PATIENT } from './actionTypes';
 
-const addTodo = (text) => {
+let nextPatientId = 0;
+
+// The below is ES6 object shorthand.
+// It will add a property to our object we are returning
+// firstName: firstName
+
+const addPatient = (firstName, lastName) => {
   return {
-    type: 'ADD_TODO',
-    id: nextTodoId,
-    text,
+    type: ADD_PATIENT,
+    id: nextPatientId++,
+    firstName,
+    lastName
   };
 };
 
-export default addTodo;
+export default addPatient;
 
-// addTodo is an action creator - a function to create an action, because that's
+// addPatient is an action creator - a function to create an action, because that's
 // easier than typing out the actions every time.
 
 // Reducers use actions to change our store

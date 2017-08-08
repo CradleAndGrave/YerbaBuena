@@ -1,15 +1,15 @@
 /* eslint-disable */
-import addTodo from './actions';
-import ADD_TODO from './actionTypes';
+import addPatient from './actions';
+import { ADD_PATIENT } from './actionTypes';
 
 describe('actions', () => {
-  it('should create an action to add a todo', () => {
-    const text = 'Finish docs';
+  it('should create an action to add a patient', () => {
     const expectedAction = {
       id: 0,
-      type: ADD_TODO,
-      text
+      type: ADD_PATIENT,
+      firstName: 'Tim',
+      lastName: 'Roy'
     };
-    expect(addTodo(text)).toEqual(expectedAction);
+    expect(addPatient('Tim', 'Roy')).toEqual(expectedAction);
   });
 });
