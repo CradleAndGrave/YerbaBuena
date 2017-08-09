@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { createStore } from 'redux';
 
 import allReducers from '../models/index';
-import addPatient from '../models/actions';
+import { addPatient } from '../models/actions';
 import { App, exampleView, VisibleTodoList } from './App';
 import PatientList from './PatientList';
 
@@ -28,15 +28,19 @@ const patients = [
   { firstName: 'Shehbaz', lastName: 'Sherwani' },
 ];
 
+[{firstName, id, lastName]}
+
 patients.map(patient => store.dispatch(addPatient(patient.firstName, patient.lastName)));
 
+//   <Route path="/patient/:id?" component={PatientView} />
 const Root = () => (
   <Provider store={store}>
     <Router>
       <div>
         <Route exact path="/" component={App} />
         <Route path="/todos" component={VisibleTodoList} />
-        <Route path="/patients" component={PatientList} />
+        <Route path="/patients/" component={PatientList} />
+
         <Route path="/example" component={exampleView} />
       </div>
     </Router>

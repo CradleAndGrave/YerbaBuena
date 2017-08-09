@@ -3,21 +3,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Patient from './Patient';
-import addPatient from '../models/actions';
+import newPatient from './newPatient';
 
-const Patients = ({ patients, onPatientClick }) => (
-  <div>
+const Patients = ({ patients }) => (
+    <div>
     {patients.map(patient =>
-      (<div role="presentation" onClick={() => onPatientClick(patient) } key={ patient.id }>
-        <Patient key={ patient.id } patient={ patient } />
-      </div>)
-    )}
+                  (<div role="presentation" key={ patient.id }>
+                   <Patient key={ patient.id } patient={ patient } />
+                   </div>)
+                 )}
   </div>
 );
 
 Patients.propTypes = {
-  patients: PropTypes.arrayOf(PropTypes.shape).isRequired,
-  onPatientClick: PropTypes.func.isRequired
+  patients: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 /*
@@ -26,28 +25,10 @@ Patients.propTypes = {
 */
 
 // eslint-disable-next-line arrow-body-style
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return { patients: state.patients };
 };
 
-// This function will send, dispatch, state to our store.
-// eslint-disable-next-line arrow-body-style
-const mapDispatchToProps = (dispatch) => {
-  return {
-    onPatientClick: ({ firstName, lastName }) => {
-      dispatch(addPatient(firstName, lastName));
-    }
-  };
-};
-
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     onPatientClick: () => {
-//       console.log('hello');
-//     }
-//   };
-// };
-
-const PatientList = connect(mapStateToProps, mapDispatchToProps)(Patients);
+const PatientList = connect(mapStateToProps)(Patients);
 
 export default PatientList;
