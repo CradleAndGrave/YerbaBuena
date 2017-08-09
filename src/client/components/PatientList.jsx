@@ -5,19 +5,31 @@ import { connect } from 'react-redux';
 import Patient from './Patient';
 import addPatient from '../models/actions';
 
-const Patients = ({ patients, onPatientClick }) => (
+// const Patients = ({ patients, onPatientClick }) => (
+//   <div>
+//     {patients.map(patient =>
+//       (<div role="presentation" onClick={() => onPatientClick(patient) } key={ patient.id }>
+//         <Patient key={ patient.id } patient={ patient } />
+//       </div>)
+//     )}
+//   </div>
+// );
+const Patients = ({ patients }) => (
   <div>
     {patients.map(patient =>
-      (<div role="presentation" onClick={() => onPatientClick(patient) } key={ patient.id }>
+      (<div role="presentation" key={ patient.id } >
         <Patient key={ patient.id } patient={ patient } />
       </div>)
     )}
   </div>
 );
 
+// Patients.propTypes = {
+//   patients: PropTypes.arrayOf(PropTypes.shape).isRequired,
+//   onPatientClick: PropTypes.func.isRequired
+// };
 Patients.propTypes = {
-  patients: PropTypes.arrayOf(PropTypes.shape).isRequired,
-  onPatientClick: PropTypes.func.isRequired
+  patients: PropTypes.arrayOf(PropTypes.shape).isRequired
 };
 
 /*
