@@ -19,6 +19,11 @@ import renderApp from './render-app';
 // import TreatmentModel from './models/treatmentView.js';
 // import HistoryModel from './models/treatmentHistory.js';
 
+// CRUD METHODS, create() || save () ---> Create
+// find() ---> Read
+// update() ----> Update
+// remove() ----> Delete
+
 // This line connects mongoose to mongodb
 mongoose.connect('mongodb://localhost/8000');
 

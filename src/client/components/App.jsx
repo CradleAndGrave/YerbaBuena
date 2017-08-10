@@ -2,6 +2,7 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
 import { connect } from 'react-redux';
+import Signup from './SignUp';
 
 // Okay, our Root component has made the store available to every component at every level
 // Now we want each component to get access to the piece of the store/object that it needs
