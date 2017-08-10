@@ -1,5 +1,6 @@
 /* eslint-disable */
-import addPatient from './actions';
+// import addPatient from './actions';
+import { addPatient } from './actions';
 import { ADD_PATIENT } from './actionTypes';
 
 describe('actions', () => {
