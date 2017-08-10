@@ -6,7 +6,7 @@ const Treatment = () => (
     <h3>Current Treatment:</h3>
     <table>
       <tr>
-        <th>Perscribed</th>
+        <th>Prescribed</th>
         <th>Dosage</th>
       </tr>
       <tr>

@@ -1,17 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-// TODO: update call to redux store to populate fields
-
-const Patient = ({ patient: { firstName: first, lastName: last } }) => (
+const Patient = ({ patient: { userId, firstName: first, lastName: last } }) => (
   <div>
-    <div><label htmlFor="firstName">Patient: </label> { first } { last }</div>
+    <Link to={`/patients/${userId}`}>{ first } { last }</Link>
   </div>
 );
 
 Patient.propTypes = {
   patient: PropTypes.shape.isRequired,
 };
-
 
 export default Patient;
