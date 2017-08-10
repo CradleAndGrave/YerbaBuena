@@ -11,24 +11,26 @@ const ProviderSchema = mongoose.Schema({
   specialty: String
 });
 
-const ProviderUser = mongoose.model('ProviderUser', ProviderSchema)
+const ProviderUser = mongoose.model('ProviderUser', ProviderSchema);
 
 ProviderUser.authenticate = (password, hash, callback) => {
   bcryptCompare(password, hash)
-    .then(isMatch => { callback(null, isMatch); })
-    .catch(error => { throw error })
-}
+    .then((isMatch) => { callback(null, isMatch); })
+    .catch((error) => { throw error; });
+};
 
 ProviderUser.getUserByUsername = (username, callback) => {
-  ProviderUser.findOne({ username: username }, callback);
-}
+  ProviderUser.findOne({ username }, callback);
+};
 
+/* eslint-disable  no-param-reassign */
 ProviderUser.registerUser = (user, callback) => {
   bcryptHash(user.password, 12)
-    .then(hash => {
+    .then((hash) => {
       user.password = hash;
       user.save(callback);
     });
-}
+};
+/* eslint-enable  no-param-reassign */
 
 export default ProviderUser;
