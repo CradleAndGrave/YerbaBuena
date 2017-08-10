@@ -29,8 +29,6 @@ const patients = [
   { firstName: 'Shehbaz', lastName: 'Sherwani' },
 ];
 
-[{firstName, id, lastName]}
-
 patients.map(patient => store.dispatch(addPatient(patient.firstName, patient.lastName)));
 
 //   <Route path="/patient/:id?" component={PatientView} />

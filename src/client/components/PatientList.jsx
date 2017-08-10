@@ -3,15 +3,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Patient from './Patient';
-import newPatient from './newPatient';
 
 const Patients = ({ patients }) => (
-    <div>
+  <div>
     {patients.map(patient =>
-                  (<div role="presentation" key={ patient.id }>
-                   <Patient key={ patient.id } patient={ patient } />
-                   </div>)
-                 )}
+      (<div role="presentation" key={ patient.id }>
+        <Patient key={ patient.id } patient={ patient } />
+      </div>)
+    )}
   </div>
 );
 
@@ -29,7 +28,7 @@ Patients.propTypes = {
 */
 
 // eslint-disable-next-line arrow-body-style
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
   return { patients: state.patients };
 };
 

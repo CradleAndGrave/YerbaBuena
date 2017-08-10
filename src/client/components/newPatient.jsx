@@ -1,7 +1,9 @@
+/* eslint-disable */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import addPatient from '../models/actions';
+
+// import addPatient from '../models/actions';
 
 // Not really sure why I added to Redux store
 // No other component will need to know current state of name in this form
@@ -9,14 +11,14 @@ import addPatient from '../models/actions';
 
 // const newPatient = ({ firstName, lastName, onPatientClick, onNameChange }) => (
 //   <div>
-//     <input value={ firstName } onChange={ (event) => onNameChange(event) }></input>
+// <input value={ firstName } onChange={ (event) => onNameChange(event) }></input>
 //     <button type="button" onClick={ () => onPatientClick({ firstName: firstName, lastName: lastName }) }>Add a Patient</button>
 //   </div>
 // );
 
 
 const newPatient = () => {
-  return(
+  return (
   <div>
     <div><label htmlFor="firstName">Patient: </label>What</div>
       </div>);

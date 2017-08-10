@@ -23,7 +23,7 @@ const patientComponent = ({ match }) => (
 );
 
 patientComponent.propTypes = {
-  match: PropTypes.object.isRequired,
+  match: PropTypes.shape.isRequired,
 };
 
 export default patientComponent;
