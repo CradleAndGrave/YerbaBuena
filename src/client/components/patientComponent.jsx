@@ -15,7 +15,7 @@ const notes = [
 
 const mapStateToProps = (state, match) => {
   const id = Number(match.match.params.id);
-  return { patient: state.patients.filter(patient => patient.id === id)[0] };
+  return { patient: state.patients.filter(patient => patient.userId === id)[0] };
 };
 
 const patientView = ({ match, patient }) => (

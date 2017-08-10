@@ -7,9 +7,10 @@ import Patient from './Patient';
 const Patients = ({ patients }) => (
   <div>
     <h1>Patient List</h1>
+    {console.log(patients)}
     {patients.map(patient =>
-      (<div role="presentation" key={ patient.id } >
-        <Patient key={ patient.patientId } patient={ patient } />
+      (<div role="presentation" key={ patient.userId } >
+        <Patient key={ patient.userId } patient={ patient } />
       </div>)
     )}
   </div>
