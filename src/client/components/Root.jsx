@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Provider } from 'react-redux';
 // eslint-disable-next-line
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
@@ -21,7 +22,7 @@ const Root = () => (
     <Router>
       <div>
         <Route exact path="/" component={App} />
-        <Route path="/patients/" component={PatientList} />
+        <Route exact path="/patients" component={PatientList} />
         <Route path="/patients/:id" component={patientComponent} />
       </div>
     </Router>

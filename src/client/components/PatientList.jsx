@@ -6,18 +6,15 @@ import Patient from './Patient';
 
 const Patients = ({ patients }) => (
   <div>
+    <h1>Patient List</h1>
     {patients.map(patient =>
-      (<div role="presentation" key={ patient.id }>
-        <Patient key={ patient.id } patient={ patient } />
+      (<div role="presentation" key={ patient.id } >
+        <Patient key={ patient.patientId } patient={ patient } />
       </div>)
     )}
   </div>
 );
 
-// Patients.propTypes = {
-//   patients: PropTypes.arrayOf(PropTypes.shape).isRequired,
-//   onPatientClick: PropTypes.func.isRequired
-// };
 Patients.propTypes = {
   patients: PropTypes.arrayOf(PropTypes.shape).isRequired
 };

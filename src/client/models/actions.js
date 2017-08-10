@@ -1,17 +1,15 @@
 /* eslint-disable */
-
-import { ADD_PATIENT, ADD_NAME, ADD_TREATMENT } from './actionTypes';
-
-let nextPatientId = 0;
+import { ADD_PATIENT, ADD_PATIENT_HISTORY, ADD_TREATMENT } from './actionTypes';
 
 // The below is ES6 object shorthand.
 // It will add a property to our object we are returning
 // firstName: firstName
 
+let nextPatientStateId = 0;
 const addPatient = ({ userType, providerId, firstName, lastName, sex, birthdate, age }) => {
   return {
     type: ADD_PATIENT,
-    id: nextPatientId++,
+    id: nextPatientStateId++,
     userType,
     providerId,
     firstName,
@@ -40,9 +38,15 @@ const addName = ({firstName, lastName}) => {
   };
 };
 
-export { addPatient, addName, addTreatment };
 
-// addPatient is an action creator - a function to create an action, because that's
-// easier than typing out the actions every time.
+let nextHistoryId = 0;
+const addPatientHistory = (historyId, notes, treatments) => {
+  return {
+    type: ADD_PATIENT_HISTORY,
+    historyId: historyId || nextHistoryId++,
+    notes,
+    treatments
+  };
+};
 
-// Reducers use actions to change our store
+export { addPatient, addName, addTreatment, addPatientHistory };
