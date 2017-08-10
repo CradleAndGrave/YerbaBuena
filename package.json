@@ -8,6 +8,7 @@
   "license": "MIT",
   "scripts": {
     "start": "yarn dev:start",
+    "start:api": "babel-node src/server",
     "dev:start": "nodemon -e js,jsx --ignore lib --ignore dist --exec babel-node src/server",
     "lint": "eslint src webpack.config.babel.js --ext .js,.jsx",
     "test": "yarn lint && flow && jest --coverage",
@@ -47,8 +48,11 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.23.0",
+    "bcrypt": "^1.0.2",
+    "bluebird": "^3.5.0",
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
+    "express-session": "^1.15.5",
     "history": "^4.6.3",
     "jquery": "^3.2.1",
     "mongoose": "^4.11.5",
