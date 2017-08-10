@@ -1,15 +1,36 @@
+import Promise from 'bluebird';
 import mongoose from 'mongoose';
-import passportLocalMongoose from 'passport-local-mongoose';
+import bcrypt from 'bcrypt';
 
-const Schema = mongoose.Schema;
+const bcryptHash = Promise.promisify(bcrypt.hash);
+const bcryptCompare = Promise.promisify(bcrypt.compare);
 
-const ProviderSchema = new Schema({
+const ProviderSchema = mongoose.Schema({
   username: String,
   password: String,
   specialty: String
 });
-const Provider = mongoose.model('Provider', ProviderSchema);
 
-ProviderSchema.plugin(passportLocalMongoose);
+const ProviderUser = mongoose.model('ProviderUser', ProviderSchema);
 
-export default Provider;
+ProviderUser.authenticate = (password, hash, callback) => {
+  bcryptCompare(password, hash)
+    .then((isMatch) => { callback(null, isMatch); })
+    .catch((error) => { throw error; });
+};
+
+ProviderUser.getUserByUsername = (username, callback) => {
+  ProviderUser.findOne({ username }, callback);
+};
+
+/* eslint-disable  no-param-reassign */
+ProviderUser.registerUser = (user, callback) => {
+  bcryptHash(user.password, 12)
+    .then((hash) => {
+      user.password = hash;
+      user.save(callback);
+    });
+};
+/* eslint-enable  no-param-reassign */
+
+export default ProviderUser;
