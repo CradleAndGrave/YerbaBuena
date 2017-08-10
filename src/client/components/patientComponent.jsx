@@ -22,7 +22,13 @@ const patientView = ({ match, patient }) => (
   <div>
     <h1>Patient View</h1>
     <Link to={'/patients'}>Back to Patients List</Link>
-    <Demographics firstName={patient.firstName} lastName={patient.lastName} sex={patient.sex} dob={patient.birthdate} age={patient.age} />
+    <Demographics
+      firstName={patient.firstName}
+      lastName={patient.lastName}
+      sex={patient.sex}
+      dob={patient.birthdate}
+      age={patient.age}
+    />
     <Notes notes={notes} />
     <Treatment />
 
@@ -35,8 +41,8 @@ const patientView = ({ match, patient }) => (
 );
 
 patientView.propTypes = {
-  match: PropTypes.object.isRequired,
-  patient: PropTypes.object.isRequired
+  match: PropTypes.shape.isRequired,
+  patient: PropTypes.shape.isRequired
 };
 
 const patientComponent = connect(mapStateToProps)(patientView);
