@@ -8,7 +8,7 @@ const PatientForm = () => (
     <br />
     <input type="text" name="password" />
     <br />
-    <input type="text" name="birhtday" />
+    <input type="text" name="birthday" />
     <br />
     <input type="text" name="sex" />
     <br />
