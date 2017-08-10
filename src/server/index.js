@@ -6,12 +6,20 @@ import Promise from 'bluebird';
 import mongoose from 'mongoose';
 import passport from 'passport';
 import bodyParser from 'body-parser';
-import providerRoutes from './routes/providerRoutes';
 import { APP_NAME, STATIC_PATH, WEB_PORT } from '../shared/config';
 import { isProd } from '../shared/util';
 import renderApp from './render-app';
+// This next block are the connections to the schemas that were made and
+// will be used once we figure out the routes.
+// import ProviderModel from './models/providerUser.js';
+// import PatientModel from './models/patientUser.js';
+// import TreatmentModel from './models/treatmentView.js';
+// import HistoryModel from './models/treatmentHistory.js';
 
-// Mongoose
+// Model specific routes
+import providerRoutes from './routes/providerRoutes';
+
+// This line connects mongoose to mongodb
 mongoose.Promise = Promise;
 mongoose.connect('mongodb://localhost/yerba_buena');
 
@@ -42,6 +50,7 @@ app.use(session({
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(bodyParser.json());
 
 app.use(STATIC_PATH, express.static('dist'));
 app.use(STATIC_PATH, express.static('public'));

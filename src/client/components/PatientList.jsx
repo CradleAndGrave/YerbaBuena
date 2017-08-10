@@ -3,21 +3,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Patient from './Patient';
-import addPatient from '../models/actions';
+// import addPatient from '../models/actions';
+import { addPatient } from '../models/actions';
 
-const Patients = ({ patients, onPatientClick }) => (
+const Patients = ({ patients }) => (
   <div>
+    <h1>Patient List</h1>
     {patients.map(patient =>
-      (<div role="presentation" onClick={() => onPatientClick(patient) } key={ patient.id }>
-        <Patient key={ patient.id } patient={ patient } />
+      (<div role="presentation" key={ patient.id } >
+        <Patient key={ patient.patientId } patient={ patient } />
       </div>)
     )}
   </div>
 );
 
 Patients.propTypes = {
-  patients: PropTypes.arrayOf(PropTypes.shape).isRequired,
-  onPatientClick: PropTypes.func.isRequired
+  patients: PropTypes.arrayOf(PropTypes.shape).isRequired
 };
 
 /*
@@ -35,11 +36,10 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     onPatientClick: ({ firstName, lastName }) => {
-      dispatch(addPatient(firstName, lastName));
+      dispatch(addPatient(null, firstName, lastName));
     }
   };
 };
-
 // const mapDispatchToProps = (dispatch) => {
 //   return {
 //     onPatientClick: () => {
