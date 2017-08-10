@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-import { ADD_PATIENT } from './actionTypes';
+import { ADD_PATIENT, ADD_NAME } from './actionTypes';
 
 let nextPatientId = 0;
 
@@ -17,7 +17,14 @@ const addPatient = (firstName, lastName) => {
   };
 };
 
-export default addPatient;
+const addName = ({firstName, lastName}) => {
+  return {
+    type: ADD_NAME,
+    name: { firstName, lastName }
+  };
+};
+
+export { addPatient, addName };
 
 // addPatient is an action creator - a function to create an action, because that's
 // easier than typing out the actions every time.

@@ -2,4 +2,6 @@ const ADD_TODO = 'ADD_TODO';
 
 const ADD_PATIENT = 'ADD_PATIENT';
 
-export { ADD_TODO, ADD_PATIENT };
+const ADD_NAME = 'ADD_NAME';
+
+export { ADD_TODO, ADD_PATIENT, ADD_NAME };
