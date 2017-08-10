@@ -11,7 +11,6 @@ import { APP_NAME, STATIC_PATH, WEB_PORT } from '../shared/config';
 import { isProd } from '../shared/util';
 import renderApp from './render-app';
 
-
 // Mongoose
 mongoose.Promise = Promise;
 mongoose.connect('mongodb://localhost/yerba_buena');
