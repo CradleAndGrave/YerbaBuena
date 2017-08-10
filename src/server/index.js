@@ -16,6 +16,10 @@ import renderApp from './render-app';
 // import TreatmentModel from './models/treatmentView.js';
 // import HistoryModel from './models/treatmentHistory.js';
 
+// CRUD METHODS, create() || save () ---> Create
+// find() ---> Read
+// update() ----> Update
+// remove() ----> Delete
 // Model specific routes
 import providerRoutes from './routes/providerRoutes';
 
