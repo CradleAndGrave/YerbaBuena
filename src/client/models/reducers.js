@@ -1,19 +1,3 @@
-const todos = (state = [], action) => {
-  switch (action.type) {
-    case 'ADD_TODO':
-      return [
-        ...state,
-        {
-          id: action.id,
-          text: action.text,
-          completed: false,
-        },
-      ];
-    default:
-      return state;
-  }
-};
-
 const patients = (state = [], action) => {
   switch (action.type) {
     case 'ADD_PATIENT':
@@ -21,8 +5,13 @@ const patients = (state = [], action) => {
         ...state,
         {
           id: action.id,
+          userId: action.userId,
           firstName: action.firstName,
           lastName: action.lastName,
+          sex: action.sex,
+          birthdate: action.birthdate,
+          age: action.age,
+          providerId: action.providerId
         },
       ];
     default:
@@ -30,14 +19,4 @@ const patients = (state = [], action) => {
   }
 };
 
-
-const visibilityFilter = (state = 'SHOW_ALL', action) => {
-  switch (action.type) {
-    case 'SET_VISIBILITY_FILTER':
-      return action.filter;
-    default:
-      return state;
-  }
-};
-
-export { visibilityFilter, todos, patients };
+export { patients };

@@ -1,5 +1,7 @@
 import React from 'react';
+
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import Demographics from './Demographics';
@@ -7,23 +9,36 @@ import Notes from './Notes';
 import Treatment from './Treatment';
 
 const notes = [
-  { id: 1, body: 'Smells Funny', date: 'April 12, 2001' },
-  { id: 2, body: 'Is Dumb', date: 'April 13, 2001' }
+  { id: 1, body: 'Smells Great', date: 'April 12, 2001' },
+  { id: 2, body: 'Kills it All DAY', date: 'April 13, 2001' }
 ];
 
-const patientComponent = ({ match }) => (
+const mapStateToProps = (state, match) => {
+  const id = Number(match.match.params.id);
+  return { patient: state.patients.filter(patient => patient.id === id)[0] };
+};
+
+const patientView = ({ match, patient }) => (
   <div>
-    <Link to={'/patients'}>Patients List</Link>
     <h1>Patient View</h1>
-    <h3>ID: {match.params.id}</h3>
-    <Demographics firstName="Joe" lastName="Dirt" sex="Male" dob="April 11, 2001" age="16" />
+    <Link to={'/patients'}>Back to Patients List</Link>
+    <Demographics firstName={patient.firstName} lastName={patient.lastName} sex={patient.sex} dob={patient.birthdate} age={patient.age} />
     <Notes notes={notes} />
     <Treatment />
+
+    <br />
+    <h3>ID: {match.params.id}</h3>
+    <p>{JSON.stringify(match)}</p>
+    <p>{JSON.stringify(patient)}</p>
+    <br />
   </div>
 );
 
-patientComponent.propTypes = {
+patientView.propTypes = {
   match: PropTypes.object.isRequired,
+  patient: PropTypes.object.isRequired
 };
+
+const patientComponent = connect(mapStateToProps)(patientView);
 
 export default patientComponent;

@@ -52,19 +52,9 @@ const VisibleTodoList = connect(mapStateToProps, mapDispatchToProps)(ToDoList);
 
 const App = () =>
       <div>
-      <Link to="/example">Example</Link>
-      <br></br>
-      <Link to="/todos">ToDoList</Link>
-      <br></br>
+      <h1>Welcome to Yerba Buena</h1>
+      <p>Replace the link to "Patient List" with auth components. When a user signs in, we redirect them (in the response of the post request) to thier first respective "Provider" or "Patient" view.</p>
       <Link to="/patients">Patient List</Link>
-      <SignUp />
-      <h1>Hello React!!!</h1>
       </div>;
 
-const exampleView = () =>
-      <div>
-      <Link to="/">Landing Page</Link>
-      <h1>What a beautiful view!</h1>
-      </div>;
-
-export { VisibleTodoList, App, exampleView };
+export { App };
