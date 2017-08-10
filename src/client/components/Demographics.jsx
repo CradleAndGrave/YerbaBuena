@@ -19,7 +19,7 @@ Demographics.propTypes = {
   lastName: PropTypes.string.isRequired,
   sex: PropTypes.string.isRequired,
   dob: PropTypes.string.isRequired,
-  age: PropTypes.strin.isRequired
+  age: PropTypes.string.isRequired
 };
 
 

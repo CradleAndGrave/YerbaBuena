@@ -8,6 +8,7 @@ import allReducers from '../models/index';
 import { addPatient } from '../models/actions';
 import { App, exampleView, VisibleTodoList } from './App';
 import PatientList from './PatientList';
+import patientComponent from './patientComponent';
 
 
 // This window.__ thing makes Redux DevTools work in development!
@@ -42,6 +43,7 @@ const Root = () => (
         <Route path="/patients/" component={PatientList} />
 
         <Route path="/example" component={exampleView} />
+        <Route path="/patients/:id" component={patientComponent} />
       </div>
     </Router>
   </Provider>

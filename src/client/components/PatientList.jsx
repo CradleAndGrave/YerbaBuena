@@ -15,8 +15,12 @@ const Patients = ({ patients }) => (
   </div>
 );
 
+// Patients.propTypes = {
+//   patients: PropTypes.arrayOf(PropTypes.shape).isRequired,
+//   onPatientClick: PropTypes.func.isRequired
+// };
 Patients.propTypes = {
-  patients: PropTypes.arrayOf(PropTypes.object).isRequired,
+  patients: PropTypes.arrayOf(PropTypes.shape).isRequired
 };
 
 /*

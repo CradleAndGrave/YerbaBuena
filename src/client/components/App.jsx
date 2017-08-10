@@ -55,6 +55,7 @@ const App = () =>
       <Link to="/example">Example</Link>
       <br></br>
       <Link to="/patients">Patient List</Link>
+      <SignUp />
       <h1>Hello React!!!</h1>
       </div>;
 
