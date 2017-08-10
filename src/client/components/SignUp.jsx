@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import ButtonInstance from './ButtonInstance';
 
 // TODO: update call to redux store to populate fields
@@ -10,8 +10,8 @@ const SignUp = () => (
   </div>
 );
 
-SignUp.propTypes = {
-  signup: PropTypes.arrayOf(PropTypes.shape).isRequired,
-};
+// SignUp.propTypes = {
+//   signup: PropTypes.arrayOf(PropTypes.shape).isRequired,
+// };
 
 export default SignUp;

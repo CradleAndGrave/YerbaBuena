@@ -12,7 +12,7 @@ const Note = ({ note }) => (
 );
 
 Note.propTypes = {
-  note: PropTypes.object.isRequired
+  note: PropTypes.shape.isRequired
 };
 
 export default Note;
