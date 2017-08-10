@@ -1,13 +1,15 @@
 import mongoose from 'mongoose';
 import passportLocalMongoose from 'passport-local-mongoose';
 
-const ProviderSchema = new mongoose.Schema({
+const Schema = mongoose.Schema;
+
+const ProviderSchema = new Schema({
   username: String,
   password: String,
   specialty: String
 });
+const Provider = mongoose.model('Provider', ProviderSchema);
 
 ProviderSchema.plugin(passportLocalMongoose);
 
-
-module.exports = mongoose.model('Provider', ProviderSchema);
+export default Provider;
