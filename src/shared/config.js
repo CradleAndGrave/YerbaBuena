@@ -8,3 +8,6 @@ export const APP_NAME = 'Yerba Buena';
 
 export const APP_CONTAINER_CLASS = 'js-app';
 export const APP_CONTAINER_SELECTOR = `.${APP_CONTAINER_CLASS}`;
+
+export const API_PORT = 8080;
+export const HOST = process.env.HOST || 'localhost';

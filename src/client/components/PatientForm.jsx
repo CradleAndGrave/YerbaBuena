@@ -31,7 +31,6 @@ class PatientForm extends React.Component {
   }
 }
 
-
 PatientForm.propTypes = {
   patientform: PropTypes.arrayOf(PropTypes.shape).isRequired,
 };
