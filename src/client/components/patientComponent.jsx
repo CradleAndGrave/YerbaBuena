@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 import Demographics from './Demographics';
 import Notes from './Notes';
-import Treatment from './Treatment';
+import treatmentComponent from './Treatment';
 
 const notes = [
   { id: 1, body: 'Smells Great', date: 'April 12, 2001' },
@@ -30,7 +30,7 @@ const patientView = ({ match, patient }) => (
       age={patient.age}
     />
     <Notes notes={notes} />
-    <Treatment />
+    <treatmentComponent />
 
     <br />
     <h3>ID: {match.params.id}</h3>
