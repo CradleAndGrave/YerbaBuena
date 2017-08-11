@@ -5,7 +5,6 @@ class PatientForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
     };
     this.onSubmit = this.onSubmit.bind(this);
   }
@@ -31,6 +30,7 @@ class PatientForm extends React.Component {
     );
   }
 }
+
 
 PatientForm.propTypes = {
   patientform: PropTypes.arrayOf(PropTypes.shape).isRequired,

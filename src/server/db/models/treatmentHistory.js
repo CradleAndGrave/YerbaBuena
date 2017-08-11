@@ -11,6 +11,7 @@ const TreatmentHistorySchema = new Schema({
   treatNote: String,
   actionTime: String
 });
+
 const History = mongoose.model('Treatment', TreatmentHistorySchema);
 
 TreatmentHistorySchema.plugin(passportLocalMongoose);
