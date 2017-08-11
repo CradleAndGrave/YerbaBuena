@@ -5,26 +5,26 @@ import bcrypt from 'bcrypt';
 const bcryptHash = Promise.promisify(bcrypt.hash);
 const bcryptCompare = Promise.promisify(bcrypt.compare);
 
-const ProviderSchema = mongoose.Schema({
+const providerSchema = mongoose.Schema({
   username: String,
   password: String,
   specialty: String
 });
 
-const ProviderUser = mongoose.model('ProviderUser', ProviderSchema);
+const providerUser = mongoose.model('providerUser', providerSchema);
 
-ProviderUser.authenticate = (password, hash, callback) => {
+providerUser.authenticate = (password, hash, callback) => {
   bcryptCompare(password, hash)
     .then((isMatch) => { callback(null, isMatch); })
     .catch((error) => { throw error; });
 };
 
-ProviderUser.getUserByUsername = (username, callback) => {
-  ProviderUser.findOne({ username }, callback);
-};
+providerUser.getUserByUsername = (username, callback) => {
+  providerUser.findOne({ username }, callback);
+}
 
 /* eslint-disable  no-param-reassign */
-ProviderUser.registerUser = (user, callback) => {
+providerUser.registerUser = (user, callpack) => {
   bcryptHash(user.password, 12)
     .then((hash) => {
       user.password = hash;
@@ -33,4 +33,4 @@ ProviderUser.registerUser = (user, callback) => {
 };
 /* eslint-enable  no-param-reassign */
 
-export default ProviderUser;
+export default providerUser;
