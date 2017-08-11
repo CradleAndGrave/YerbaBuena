@@ -31,7 +31,7 @@ Add `/node_modules/` and `/coverage/` to your `.gitignore`.
 - React-Bootstrap
 - React
 - Redux
-- Mongoose/Mongo
+- Mongoose/MongoDB
 - Express
 - Node.js
 
@@ -53,7 +53,6 @@ yarn dev:wds
 ### Roadmap
 
 View the project roadmap [here](https://github.com/CradleAndGrave/CradleAndGrave/issues)
-
 
 ## Contributing
 
