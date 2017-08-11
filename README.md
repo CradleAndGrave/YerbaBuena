@@ -28,11 +28,12 @@ Add `/node_modules/` and `/coverage/` to your `.gitignore`.
 
 ## Requirements
 
-- Mongoose/Mongo
-- Express
+- React-Bootstrap
 - React
 - Redux
-- Node
+- Mongoose/Mongo
+- Express
+- Node.js
 
 ## Development
 
@@ -42,6 +43,11 @@ From within the root directory:
 
 ```
 yarn install && yarn start
+```
+
+In another terminal:
+```
+yarn dev:wds
 ```
 
 ### Roadmap
