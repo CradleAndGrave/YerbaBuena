@@ -62,7 +62,7 @@ class ButtonInstance extends React.Component {
   }
 }
 
-// Make this a class component and when posted to data base the response needs to 
+// Make this a class component and when posted to data base the response needs to
 // Be connected to the store.
 // ButtonInstance.propTypes = {};
 
