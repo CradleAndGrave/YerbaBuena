@@ -6,7 +6,7 @@ const initialState =
         patients: [
           { userId: 1, userType: 2, providerId: 3, firstName: 'Ash', lastName: 'Woodall', sex: 'female', birthdate: '03/25/89', age: '28' },
           { userId: 2, userType: 1, providerId: 6, firstName: 'Zeus', lastName: 'Esquivel', sex: 'male', birthdate: '03/25/89', age: '28' },
-          { userId: 4, userType: 1, providerId: 3, firstName: 'Tim', lastName: 'Roy', sex: 'male', birthdate: '03/25/89', age: '28' },
+          { userId: 4, userType: 1, providerId: 3, firstName: 'Tim', lastName: 'Roy', sex: 'male', birthdate: '12/13/84', age: '32' },
           { userId: 5, userType: 1, providerId: null, firstName: 'Shehbaz', lastName: 'Sherwani', sex: 'male', birthdate: '03/25/89', age: '28' }
         ],
         treatments: [
