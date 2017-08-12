@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { ADD_PATIENT, ADD_PATIENT_HISTORY, ADD_TREATMENT } from './actionTypes';
+import { ADD_PATIENT, ADD_NOTE, ADD_TREATMENT } from './actionTypes';
 
 // The below is ES6 object shorthand.
 // It will add a property to our object we are returning
@@ -20,9 +20,19 @@ const addPatient = ({ userType, providerId, firstName, lastName, sex, birthdate,
   };
 };
 
+const addNote = ({ userId, body, datetime }) => {
+  return {
+    type: ADD_NOTE,
+    userId,
+    body,
+    datetime
+  };
+};
+
 const addTreatment = ({ userId, name, dose, note, action, datetime }) => {
   return {
     type: ADD_TREATMENT,
+    userId,
     name,
     dose,
     notes,
@@ -31,22 +41,11 @@ const addTreatment = ({ userId, name, dose, note, action, datetime }) => {
   };
 };
 
-const addName = ({firstName, lastName}) => {
+const addName = ({ firstName, lastName }) => {
   return {
     type: ADD_NAME,
     name: { firstName, lastName }
   };
 };
 
-
-let nextHistoryId = 0;
-const addPatientHistory = (historyId, notes, treatments) => {
-  return {
-    type: ADD_PATIENT_HISTORY,
-    historyId: historyId || nextHistoryId++,
-    notes,
-    treatments
-  };
-};
-
-export { addPatient, addName, addTreatment, addPatientHistory };
+export { addPatient, addNote, addTreatment, addName };

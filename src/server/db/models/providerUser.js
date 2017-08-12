@@ -21,10 +21,10 @@ providerUser.authenticate = (password, hash, callback) => {
 
 providerUser.getUserByUsername = (username, callback) => {
   providerUser.findOne({ username }, callback);
-}
+};
 
 /* eslint-disable  no-param-reassign */
-providerUser.registerUser = (user, callpack) => {
+providerUser.registerUser = (user, callback) => {
   bcryptHash(user.password, 12)
     .then((hash) => {
       user.password = hash;
