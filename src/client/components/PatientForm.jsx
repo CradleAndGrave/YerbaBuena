@@ -12,7 +12,6 @@ class PatientForm extends React.Component {
     e.preventDefault();
   }
 
-
   render() {
     return (
       <form onSubmit={this.onSubmit}>

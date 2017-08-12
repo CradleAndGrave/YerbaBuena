@@ -1,53 +1,115 @@
-/* eslint-disable */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Button, Collapse, Grid, Col, FormGroup, FormControl } from 'react-bootstrap';
+import { addPatient } from '../models/actions';
 
-// import addPatient from '../models/actions';
+class User extends React.Component {
+  constructor(props) {
+    super(props);
 
-// Not really sure why I added to Redux store
-// No other component will need to know current state of name in this form
-// https://goshakkk.name/should-i-put-form-state-into-redux/
+    this.state = {
+      firstName: '',
+      lastName: '',
+      birthdate: '',
+      age: '',
+      sex: '',
+      userType: '',
+      open: false
+    };
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.onPatientClick = this.props.onPatientClick.bind(this);
+  }
 
-// const newPatient = ({ firstName, lastName, onPatientClick, onNameChange }) => (
-//   <div>
-// <input value={ firstName } onChange={ (event) => onNameChange(event) }></input>
-//     <button type="button" onClick={ () => onPatientClick({ firstName: firstName, lastName: lastName }) }>Add a Patient</button>
-//   </div>
-// );
+  handleInputChange(event) {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
 
+    this.setState({
+      [name]: value
+    });
+  }
+  
+  render() {
+    return (
+      <div>
+        <Button onClick={ () => this.setState({ open: !this.state.open })}>New Patient</Button>
+        <Collapse in={this.state.open}>
+          <Grid>
+            <Col xs={6} md={4}>
+              <FormGroup>
 
-const newPatient = () => {
-  return (
-  <div>
-    <div><label htmlFor="firstName">Patient: </label>What</div>
-      </div>);
+                <FormControl
+                  name="firstName"
+                  placeholder="First Name"
+                  value={ this.state.firstName }
+                  onChange={ this.handleInputChange }>
+                </FormControl>
+
+                <FormControl
+                  name="lastName"
+                  placeholder="Last Name"
+                  value={ this.state.lastName }
+                  onChange={ this.handleInputChange }>
+                </FormControl>
+
+                <FormControl
+                  name="birthdate"
+                  placeholder="Birthdate"
+                  value={ this.state.birthdate }
+                  onChange={ this.handleInputChange }>
+                </FormControl>
+
+                <FormControl
+                  name="sex"
+                  placeholder="Sex"
+                  value={ this.state.sex }
+                  onChange={ this.handleInputChange }>
+                </FormControl>
+
+                <FormControl
+                  placeholder="age"
+                  name="age"
+                  value={ this.state.age }
+                  onChange={ this.handleInputChange }>
+                </FormControl>
+
+                <FormControl
+                  name="userType"
+                  placeholder="UserType: 1 for patient, 2 for provider"
+                  value={ this.state.userType }
+                  onChange={ this.handleInputChange }>
+                </FormControl>
+
+                <Button bsStyle="primary" type="button" onClick={() => this.onPatientClick(this.state)}>Add a Patient</Button>
+                
+              </FormGroup>
+            </Col>
+          </Grid>
+        </Collapse>
+      </div>
+    ) };
 };
 
-// newPatient.propTypes = {
-//   firstName: PropTypes.string.isRequired,
-//   lastName: PropTypes.string.isRequired,
-//   onPatientClick: PropTypes.func.isRequired,
-//   onNameChange: PropTypes.func.isRequired
-// };
+User.propTypes = {
+  onPatientClick: PropTypes.func.isRequired
+};
 
-// // eslint-disable-next-line arrow-body-style
-// const mapStateToProps = (state) => {
-//   return { firstName: 'Tim',
-//            lastName: 'Roy'};
-// };
+// eslint-disable-next-line arrow-body-style
+const mapStateToProps = () => {
+  return {};
+};
 
-// // This function will send, dispatch, state to our store.
-// // eslint-disable-next-line arrow-body-style
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     onPatientClick: ({ firstName, lastName }) => {
-//       dispatch(addPatient(firstName, lastName));
-//     },
-//     onNameChange: event => console.log(event)
-//   };
-// };
+// eslint-disable-next-line arrow-body-style
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onPatientClick: (patientObj) => {
+      dispatch(addPatient(patientObj));
+    }
+  };
+};
 
-// const addPatientForm = connect(mapStateToProps, mapDispatchToProps)(newPatient);
+const addPatientForm = connect(mapStateToProps, mapDispatchToProps)(User);
 
-export default newPatient;
+export default addPatientForm;
