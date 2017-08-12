@@ -29,10 +29,12 @@ mongoose.Promise = Promise;
 mongoose.connect('mongodb://localhost/yerba_buena');
 
 mongoose.connection.on('error', (error) => {
+  // eslint-disable-next-line 
   console.log(`Error connecting in mongoose: ${error}`);
 });
 
 mongoose.connection.on('connected', () => {
+  // eslint-disable-next-line 
   console.log('Successfully connected to mongoose');
 });
 
@@ -88,5 +90,6 @@ app.use((req, res) => {
 
 
 app.listen(WEB_PORT, () => {
+  // eslint-disable-next-line 
   console.log(`Server running on port ${WEB_PORT} ${isProd ? '(production)' : '(development).\nKeep "yarn dev:wds" running in an other terminal'}.`);
 });

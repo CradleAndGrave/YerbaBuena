@@ -18,3 +18,4 @@ const renderApp = (title: string) =>
   </html>`;
 
 export default renderApp;
+
