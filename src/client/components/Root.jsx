@@ -4,13 +4,13 @@ import { Provider } from 'react-redux';
 // eslint-disable-next-line
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { createStore } from 'redux';
+// import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
+
 import allReducers from '../models/index';
-import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
 
 import { App } from './App';
 import PatientList from './PatientList';
 import patientComponent from './patientComponent';
-
 
 
 // This window.__ thing makes Redux DevTools work in development!

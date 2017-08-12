@@ -5,14 +5,14 @@ import PropTypes from 'prop-types';
 
 const Note = ({ note }) => (
   <div>
-    <div><label htmlFor="noteDate" >Date: </label> { note.date }</div>
+    <div><label htmlFor="noteDate" >Date: </label> { note.datetime }</div>
     <div><label htmlFor="note" >Encounter Notes: </label> { note.body }</div>
   </div>
 
 );
 
 Note.propTypes = {
-  note: PropTypes.shape.isRequired
+  note: PropTypes.object.isRequired
 };
 
 export default Note;

@@ -8,17 +8,18 @@ import Demographics from './Demographics';
 import Notes from './Notes';
 import Treatment from './Treatment';
 
-const notes = [
-  { id: 1, body: 'Smells Great', date: 'April 12, 2001' },
-  { id: 2, body: 'Kills it All DAY', date: 'April 13, 2001' }
-];
-
 const mapStateToProps = (state, match) => {
   const id = Number(match.match.params.id);
-  return { patient: state.patients.filter(patient => patient.userId === id)[0] };
+  return {
+    patient: state.patients.filter(patient => patient.userId === id)[0],
+    notes: state.notes.filter(note => note.userId === id),
+    treatments: state.treatments.filter(treatment => treatment.userId === id)
+  };
 };
 
-const patientView = ({ match, patient }) => (
+// class P
+
+const patientView = ({ match, patient, notes, treatments }) => (
   <div>
     <h1>Patient View</h1>
     <Link to={'/patients'}>Back to Patients List</Link>
@@ -30,19 +31,22 @@ const patientView = ({ match, patient }) => (
       age={patient.age}
     />
     <Notes notes={notes} />
-    <Treatment />
+    <Treatment treatments={treatments} />
 
     <br />
     <h3>ID: {match.params.id}</h3>
     <p>{JSON.stringify(match)}</p>
     <p>{JSON.stringify(patient)}</p>
+    <p>{JSON.stringify(treatments)}</p>
     <br />
   </div>
 );
 
 patientView.propTypes = {
-  match: PropTypes.shape.isRequired,
-  patient: PropTypes.shape.isRequired
+  match: PropTypes.object.isRequired,
+  patient: PropTypes.object.isRequired,
+  notes: PropTypes.array.isRequired,
+  treatments: PropTypes.array.isRequired
 };
 
 const patientComponent = connect(mapStateToProps)(patientView);

@@ -45,13 +45,13 @@ class ButtonInstance extends React.Component {
     return (
       <div className="well" style={wellStyles}>
 
-        <Button providerClick={this.onProviderClick} bsStyle="primary" bsSize="large" block>Provider?</Button>
+        <Button bsStyle="primary" bsSize="large" block>Provider</Button>
         <Collapse>
           <div>
             {provider}
           </div>
         </Collapse>
-        <Button patientClick={this.onPatientClick} bsSize="large" block>Patient?</Button>
+        <Button bsSize="large" block>Patient</Button>
         <Collapse>
           <div>
             {patient}

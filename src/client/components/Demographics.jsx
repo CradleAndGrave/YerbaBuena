@@ -22,5 +22,4 @@ Demographics.propTypes = {
   age: PropTypes.string.isRequired
 };
 
-
 export default Demographics;

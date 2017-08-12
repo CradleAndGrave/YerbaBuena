@@ -49,6 +49,12 @@ export type patientsType = Array<{
   providerId: number | null
 }>;
 
+export type notesType = Array<{
+    userId: number,
+    body: string,
+    datetime: string
+}>;
+
 export type treatmentsType = Array<{
     userId: number,
     name: string,
