@@ -39,6 +39,7 @@ const patientView = ({ match, patient, notes, treatments }) => (
     <p>{JSON.stringify(patient)}</p>
     <p>{JSON.stringify(treatments)}</p>
     <br />
+
   </div>
 );
 
