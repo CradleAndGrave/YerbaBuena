@@ -22,4 +22,5 @@ const getAllPatients = () => {
   });
 };
 
+
 export default getAllPatients;

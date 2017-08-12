@@ -9,6 +9,7 @@ const renderApp = (title: string) =>
   <head>
     <title>${title}</title>
     <link rel="stylesheet" href="${STATIC_PATH}/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
   </head>
   <body>
     <div class="${APP_CONTAINER_CLASS}"></div>

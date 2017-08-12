@@ -19,42 +19,30 @@ class ButtonInstance extends React.Component {
   }
 
   onProviderClick() {
-    this.setState(prevState => ({
-      providerClicked: !prevState.providerClicked
-    }));
+    this.setState({
+      providerClicked: !this.state.providerClicked
+    });
   }
 
   onPatientClick() {
-    this.setState(prevState => ({
-      patientClicked: !prevState.patientClicked
-    }));
+    this.setState({
+      patientClicked: !this.state.patientClicked
+    });
   }
   render() {
-    const isProviderClicked = this.state.providerClicked;
-    const isPatientClicked = this.state.providerClicked;
-
-    let provider = null;
-    let patient = null;
-
-    if (isProviderClicked && !isPatientClicked) {
-      provider = <ProviderForm />;
-    } else if (!isProviderClicked && isPatientClicked) {
-      patient = <PatientForm />;
-    }
-
     return (
       <div className="well" style={wellStyles}>
 
-        <Button providerClick={this.onProviderClick} bsStyle="primary" bsSize="large" block>Provider?</Button>
-        <Collapse>
+        <Button onClick={this.onProviderClick} bsStyle="primary" bsSize="large" block>Provider?</Button>
+        <Collapse in={this.state.providerClicked}>
           <div>
-            {provider}
+            <ProviderForm />
           </div>
         </Collapse>
-        <Button patientClick={this.onPatientClick} bsSize="large" block>Patient?</Button>
-        <Collapse>
+        <Button onClick={this.onPatientClick} bsSize="large" block>Patient?</Button>
+        <Collapse in={this.state.patientClicked}>
           <div>
-            {patient}
+            <PatientForm />
           </div>
         </Collapse>
       </div>
