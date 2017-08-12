@@ -28,11 +28,12 @@ Add `/node_modules/` and `/coverage/` to your `.gitignore`.
 
 ## Requirements
 
-- Mongoose/Mongo
-- Express
+- React-Bootstrap
 - React
 - Redux
-- Node
+- Mongoose/MongoDB
+- Express
+- Node.js
 
 ## Development
 
@@ -44,10 +45,16 @@ From within the root directory:
 yarn install && yarn start
 ```
 
+In another terminal:
+```
+yarn dev:wds
+```
+
+Navigate to `localhost:8000`
+
 ### Roadmap
 
 View the project roadmap [here](https://github.com/CradleAndGrave/CradleAndGrave/issues)
-
 
 ## Contributing
 

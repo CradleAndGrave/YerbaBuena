@@ -1,10 +1,8 @@
 import { combineReducers } from 'redux';
-import { todos, visibilityFilter, patients } from './reducers';
+import { patients, notes, treatments } from './reducers';
 
 const allReducers = combineReducers({
-  todos,
-  visibilityFilter,
-  patients
+  patients, notes, treatments
 });
 
 export default allReducers;

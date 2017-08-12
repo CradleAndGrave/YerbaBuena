@@ -4,14 +4,15 @@ import Note from './Note';
 
 // TODO: update call to redux store to populate fields
 
-const Notes = props => (
+const Notes = ({ notes }) => (
   <div>
-    {props.notes.map(note =>
-      <div key={ note.id }><Note key={ note.id } note={ note } /></div>
-    )}
+    ({notes.map(note =>
+      (<div key={ note.datetime }>
+        <Note note={ note } />
+      </div>)
+    )})
   </div>
 );
-
 
 Notes.propTypes = {
   notes: PropTypes.arrayOf(PropTypes.shape).isRequired,

@@ -9,7 +9,10 @@ const renderApp = (title: string) =>
   <head>
     <title>${title}</title>
     <link rel="stylesheet" href="${STATIC_PATH}/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap-theme.min.css">
   </head>
+
   <body>
     <div class="${APP_CONTAINER_CLASS}"></div>
     <script src="${isProd ? STATIC_PATH : `http://localhost:${WDS_PORT}/dist`}/js/bundle.js"></script>
