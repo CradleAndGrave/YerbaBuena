@@ -50,6 +50,8 @@ In another terminal:
 yarn dev:wds
 ```
 
+Navigate to `localhost:8000`
+
 ### Roadmap
 
 View the project roadmap [here](https://github.com/CradleAndGrave/CradleAndGrave/issues)

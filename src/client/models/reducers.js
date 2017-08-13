@@ -1,20 +1,28 @@
 // @flow
-import type { treatmentsType, patientsType } from './stateType';
+import type { patientsType, notesType, treatmentsType } from './stateType';
 
 const initialState =
       {
         patients: [
-          { userId: 1, userType: 2, providerId: 3, firstName: 'Ash', lastName: 'Woodall', sex: 'female', birthdate: '03/25/89', age: '28' },
-          { userId: 2, userType: 1, providerId: 6, firstName: 'Zeus', lastName: 'Esquivel', sex: 'male', birthdate: '03/25/89', age: '28' },
-          { userId: 4, userType: 1, providerId: 3, firstName: 'Tim', lastName: 'Roy', sex: 'male', birthdate: '12/13/84', age: '32' },
-          { userId: 5, userType: 1, providerId: null, firstName: 'Shehbaz', lastName: 'Sherwani', sex: 'male', birthdate: '03/25/89', age: '28' }
+          { userId: 1, userType: 1, providerId: 3, firstName: 'Ash', lastName: 'Woodall', sex: 'female', birthdate: '', age: '' },
+          { userId: 2, userType: 1, providerId: 6, firstName: 'Zeus', lastName: 'Esquivel', sex: 'male', birthdate: '', age: '' },
+          { userId: 4, userType: 1, providerId: 3, firstName: 'Tim', lastName: 'Roy', sex: 'male', birthdate: '', age: '' },
+          { userId: 5, userType: 1, providerId: null, firstName: 'Shehbaz', lastName: 'Sherwani', sex: 'male', birthdate: '03/25/89', age: '28' },
         ],
         treatments: [
-          { userId: 1, name: 'Ash W', dose: '20000 g of caffeine', notes: 'totes da best', action: 1, datetime: 'always' },
-          { userId: 4, name: 'Tim R', dose: '20000 g of caffeine', notes: 'also pretty good', action: 1, datetime: 'the only time is now' },
-          { userId: 5, name: 'Shebaz S', dose: '20000 g of caffeine', notes: 'rocking', action: 1, datetime: 'timeless' },
-          { userId: 2, name: 'Zeus E', dose: '20000 g of caffeine', notes: 'awesome', action: 1, datetime: 'futuristic' }],
-        notes: []
+          { userId: 1, name: 'caffeine', dose: '20000 g', notes: 'totes da best', action: 1, datetime: '08/10/17 14:00' },
+          { userId: 4, name: 'caffeine', dose: '20000 g', notes: 'also pretty good', action: 1, datetime: '08/10/17 14:30' },
+          { userId: 5, name: 'caffeine', dose: '20000 g', notes: 'rocking', action: 1, datetime: '08/10/17 15:00' },
+          { userId: 2, name: 'caffeine', dose: '20000 g', notes: 'awesome', action: 1, datetime: '08/10/17 15:30' },
+          { userId: 1, name: 'melotonine', dose: '2 g', notes: 'that caffeine works all night', action: 1, datetime: '08/11/17 14:00' },
+          { userId: 1, name: 'melotonine', dose: '2 g', notes: 'ash chose to exercise daily instead of sleepy time drugs', action: -1, datetime: '08/18/17 14:00' }],
+        notes: [
+          { userId: 1, body: 'totes da best', datetime: '08/10/17 14:00' },
+          { userId: 4, body: 'great geans', datetime: '08/10/17 14:30' },
+          { userId: 5, body: 'this dude abides', datetime: '08/10/17 15:00' },
+          { userId: 2, body: 'swagger hound', datetime: '08/10/17 15:30' },
+          { userId: 1, body: 'great hair', datetime: '08/11/17 14:01' }
+        ]
       };
 
 const patients = (state: patientsType = initialState.patients, action: Object) => {
@@ -28,7 +36,21 @@ const patients = (state: patientsType = initialState.patients, action: Object) =
         providerId: action.providerId,
         sex: action.sex,
         birthdate: action.birthdate,
-        age: action.age }];
+        age: action.age
+      }];
+    default:
+      return state;
+  }
+};
+
+const notes = (state: notesType = initialState.notes, action: Object) => {
+  switch (action.type) {
+    case 'ADD_NOTE':
+      return [...state, {
+        userId: action.id,
+        body: action.body,
+        datetime: action.datetime
+      }];
     default:
       return state;
   }
@@ -50,4 +72,4 @@ const treatments = (state: treatmentsType = initialState.treatments, action: Obj
   }
 };
 
-export { patients, treatments };
+export { patients, notes, treatments };

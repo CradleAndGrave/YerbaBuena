@@ -22,16 +22,19 @@ import renderApp from './render-app';
 // remove() ----> Delete
 // Model specific routes
 import providerRoutes from './routes/providerRoutes';
+import patientRoutes from './routes/patientRoutes';
 
 // This line connects mongoose to mongodb
 mongoose.Promise = Promise;
 mongoose.connect('mongodb://localhost/yerba_buena');
 
 mongoose.connection.on('error', (error) => {
+  // eslint-disable-next-line 
   console.log(`Error connecting in mongoose: ${error}`);
 });
 
 mongoose.connection.on('connected', () => {
+  // eslint-disable-next-line 
   console.log('Successfully connected to mongoose');
 });
 
@@ -63,14 +66,30 @@ app.get('/', (req, res) => {
   res.send(renderApp(APP_NAME));
 });
 
+
 // Auth Routes
 app.use('/providerAuth', providerRoutes);
+app.use('/patientAuth', patientRoutes);
 
 // example using isAuthenticated middleware :)
-app.get('/test', isAuthenticated, (req, res) => {
+app.get('/patients', isAuthenticated, (req, res) => {
   res.status(200).json('this is an authenticated route!');
 });
 
+app.get('/patients/:id', isAuthenticated, (req, res) => {
+  res.status(200).json('this is an authenticated route!');
+});
+
+app.get('*', (req, res) => {
+  res.send('I AM A WILDCARD');
+});
+
+app.use((req, res) => {
+  res.status(404).send('404 - Page Not Found');
+});
+
+
 app.listen(WEB_PORT, () => {
+  // eslint-disable-next-line 
   console.log(`Server running on port ${WEB_PORT} ${isProd ? '(production)' : '(development).\nKeep "yarn dev:wds" running in an other terminal'}.`);
 });

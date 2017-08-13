@@ -9,7 +9,7 @@ const Patient = ({ patient: { userId, firstName: first, lastName: last } }) => (
 );
 
 Patient.propTypes = {
-  patient: PropTypes.shape.isRequired,
+  patient: PropTypes.object.isRequired,
 };
 
 export default Patient;
