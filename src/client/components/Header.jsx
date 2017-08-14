@@ -1,20 +1,18 @@
 import React from 'react';
 import {Navbar, Nav, NavItem} from 'react-bootstrap';
+import { BrowserRouter as Router, Route, Link, Redirect, Switch } from 'react-router-dom';
 
-// TODO: update call to redux store to populate fields
-// TODO: Flexbox
-// TODO: update logout route
 
 const Header = () => (
-  <Navbar inverse collapseOnSelect>
+  <Navbar className="navbar navbar-fixed-top" inverse collapseOnSelect>
     <Navbar.Header>
-      <Navbar.Brand>
-        <a href="/">Yerba Buena</a>
+      <Navbar.Brand className="brand">
+        <Link to="/">Yerba Buena</Link>
       </Navbar.Brand>
     </Navbar.Header>
     <Nav pullRight>
       <NavItem>
-        Logout
+        <Link className="logout" to={'/logout'}>Logout</Link>
       </NavItem>
     </Nav>
   </Navbar>

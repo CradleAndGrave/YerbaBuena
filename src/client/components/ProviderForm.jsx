@@ -56,7 +56,7 @@ class ProviderForm extends React.Component {
         <FormControl onChange={this.onInputChange} type="text" placeholder="username" name="username" />
         <FormControl onChange={this.onInputChange} type="text" placeholder="password" name="password" />
         <FormControl onChange={this.onInputChange} type="text" placeholder="specialty" name="specialty" />
-        <Button type="submit">Submit</Button>
+        <Button className="submit" type="submit">Submit</Button>
       </form>
     );
   }

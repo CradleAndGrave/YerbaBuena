@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 const Treatment = ({ treatments, addTreatment }) => (
   <div>
     <hr />
-    <h3>Current Treatment:</h3>
-    <table>
+    <h3 >Current Treatment</h3>
+    <table className="treatment">
       <tbody>
         <tr>
           <th />
-          <th>Perscribed</th>
+          <th>Prescribed</th>
           <th>Dosage</th>
           <th>Notes</th>
           <th>Date Time</th>
@@ -27,14 +27,15 @@ const Treatment = ({ treatments, addTreatment }) => (
     </table>
 
     <h3>Add Treatment:</h3>
-    <form onSubmit={addTreatment}>
+    <form className="treatment" onSubmit={addTreatment}>
       <input name="name" type="text" placeholder="What Drug?" />
+    <h4>Add Treatment:</h4>
       <input name="dose" type="text" placeholder="What Dosage?" />
       <input name="notes" type="text" placeholder="Any Notes?" />
       <button type="submit">Add</button>
     </form>
     <h4>Recommendation:</h4>
-    <table>
+    <table className="treatment">
       <tbody>
         <tr>
           <td>Kryptonite</td>
@@ -44,8 +45,8 @@ const Treatment = ({ treatments, addTreatment }) => (
       </tbody>
     </table>
 
-    <h3>Treatment History:</h3>
-    <table>
+    <h4>Treatment History:</h4>
+    <table className="treatmentHx">
       <tbody>
         <tr>
           <th>Action</th>
@@ -65,7 +66,6 @@ const Treatment = ({ treatments, addTreatment }) => (
         )}
       </tbody>
     </table>
-    <hr />
   </div>
 );
 
