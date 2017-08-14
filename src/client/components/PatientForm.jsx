@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import $ from 'jquery';
+import {Button, FormControl} from 'react-bootstrap'
 
 class PatientForm extends React.Component {
   constructor(props) {
@@ -33,15 +34,11 @@ class PatientForm extends React.Component {
   render() {
     return (
       <form onSubmit={this.onSubmitForm}>
-        <input onChange={this.onInputChange} type="text" placeholder="username" name="username" />
-        <br />
-        <input onChange={this.onInputChange} type="text" placeholder="password" name="password" />
-        <br />
-        <input onChange={this.onInputChange} type="text" placeholder="birthday" name="birhtday" />
-        <br />
-        <input onChange={this.onInputChange} type="text" placeholder="sex" name="sex" />
-        <br />
-        <input type="submit" />
+        <FormControl onChange={this.onInputChange} type="text" placeholder="username" name="username" />
+        <FormControl onChange={this.onInputChange} type="text" placeholder="password" name="password" />
+        <FormControl onChange={this.onInputChange} type="text" placeholder="birthday" name="birhtday" />
+        <FormControl onChange={this.onInputChange} type="text" placeholder="sex" name="sex" />
+        <Button type="submit">Submit</Button>
       </form>
     );
   }

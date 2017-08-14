@@ -20,9 +20,9 @@ const mapStateToProps = (state, match) => {
 // class P
 
 const patientView = ({ match, patient, notes, treatments }) => (
-  <div>
+  <div className='patient'>
     <h1>Patient View</h1>
-    <Link to={'/patients'}>Back to Patients List</Link>
+    <Link to={'/'}>Back to Patients List</Link>
     <Demographics
       firstName={patient.firstName}
       lastName={patient.lastName}

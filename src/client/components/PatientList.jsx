@@ -6,7 +6,7 @@ import Patient from './Patient';
 import User from './newPatient';
 
 const Patients = ({ patients }) => (
-    <div>
+    <div className="patientList">
     <h1>Patient List</h1>
     {patients.map(patient =>
       (<div role="presentation" key={ patient.userId } >

@@ -16,7 +16,7 @@ const initialState = {
     { userId: 1, name: 'melotonine', dose: '2 g', notes: 'ash chose to exercise daily instead of sleepy time drugs', action: -1, datetime: '08/18/17 14:00' }],
   notes: [
     { userId: 1, body: 'totes da best', datetime: '08/10/17 14:00' },
-    { userId: 4, body: 'great geans', datetime: '08/10/17 14:30' },
+    { userId: 4, body: 'great genes', datetime: '08/10/17 14:30' },
     { userId: 5, body: 'this dude abides', datetime: '08/10/17 15:00' },
     { userId: 2, body: 'swagger hound', datetime: '08/10/17 15:30' },
     { userId: 1, body: 'great hair', datetime: '08/11/17 14:01' }
