@@ -15,6 +15,12 @@
 //   }>;
 
 export type State = {
+  user: Object<{
+    username: string,
+    password: string,
+    specialty: string,
+    isAuthenticated: boolean
+  }>,
   patients: Array<{
     userId: number,
     firstName: string,
@@ -38,6 +44,13 @@ export type State = {
     datetime: string
   }>
 };
+
+export type userType = Object<{
+  username: string,
+  password: string,
+  specialty: string,
+  isAuthenticated: boolean
+}>;
 
 export type patientsType = Array<{
   userId: number,

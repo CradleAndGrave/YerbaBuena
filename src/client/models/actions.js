@@ -1,9 +1,28 @@
 /* eslint-disable */
-import { ADD_PATIENT, ADD_NOTE, ADD_TREATMENT } from './actionTypes';
+import { ADD_PATIENT, ADD_NOTE, ADD_TREATMENT, LOGOUT, LOGIN, SIGNUP } from './actionTypes';
 
 // The below is ES6 object shorthand.
 // It will add a property to our object we are returning
 // firstName: firstName
+
+
+export const loginUser = ({username, password, specialty}) => ({
+  type: LOGIN,
+  username,
+  password,
+  specialty
+});
+
+export const signupUser = ({ username, password, specialty }) => ({
+  type: SIGNUP,
+  username,
+  password,
+  specialty
+});
+
+export const logoutUser = () => ({
+  type: LOGOUT
+});
 
 let nextPatientStateId = 0;
 const addPatient = ({ userType, providerId, firstName, lastName, sex, birthdate, age }) => {

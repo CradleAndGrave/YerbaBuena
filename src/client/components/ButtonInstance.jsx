@@ -32,14 +32,14 @@ class ButtonInstance extends React.Component {
   render() {
     return (
       <div className="well" style={wellStyles}>
-
-        <Button onClick={this.onProviderClick} bsStyle="primary" bsSize="large" block>Provider?</Button>
+        <div>I am a:</div>
+        <Button onClick={this.onProviderClick} bsStyle="primary" bsSize="large" block>Provider</Button>
         <Collapse in={this.state.providerClicked}>
           <div>
             <ProviderForm />
           </div>
         </Collapse>
-        <Button onClick={this.onPatientClick} bsSize="large" block>Patient?</Button>
+        <Button onClick={this.onPatientClick} bsSize="large" block>Patient</Button>
         <Collapse in={this.state.patientClicked}>
           <div>
             <PatientForm />

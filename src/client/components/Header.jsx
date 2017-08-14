@@ -1,16 +1,23 @@
 import React from 'react';
+import {Navbar, Nav, NavItem} from 'react-bootstrap';
 
 // TODO: update call to redux store to populate fields
 // TODO: Flexbox
 // TODO: update logout route
 
 const Header = () => (
-  <div>
-    <h1>Yerba Buena</h1>
-    <h2>Friendly neighborhood clinic management system</h2>
-    <a href="/logout">logout</a>
-  </div>
-
+  <Navbar inverse collapseOnSelect>
+    <Navbar.Header>
+      <Navbar.Brand>
+        <a href="/">Yerba Buena</a>
+      </Navbar.Brand>
+    </Navbar.Header>
+    <Nav pullRight>
+      <NavItem>
+        Logout
+      </NavItem>
+    </Nav>
+  </Navbar>
 );
 
 export default Header;
