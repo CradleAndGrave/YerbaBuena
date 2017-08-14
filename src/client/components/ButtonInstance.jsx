@@ -33,7 +33,7 @@ class ButtonInstance extends React.Component {
     return (
       <div className="well" style={wellStyles}>
         <div>I am a:</div>
-        <Button onClick={this.onProviderClick} bsStyle="primary" bsSize="large" block>Provider</Button>
+        <Button className="providerButton" onClick={this.onProviderClick} bsStyle="primary" bsSize="large" block>Provider</Button>
         <Collapse in={this.state.providerClicked}>
           <div>
             <ProviderForm />

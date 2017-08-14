@@ -38,7 +38,7 @@ class PatientForm extends React.Component {
         <FormControl onChange={this.onInputChange} type="text" placeholder="password" name="password" />
         <FormControl onChange={this.onInputChange} type="text" placeholder="birthday" name="birhtday" />
         <FormControl onChange={this.onInputChange} type="text" placeholder="sex" name="sex" />
-        <Button type="submit">Submit</Button>
+        <Button className="submit" type="submit">Submit</Button>
       </form>
     );
   }
