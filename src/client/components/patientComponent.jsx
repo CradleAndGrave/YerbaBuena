@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import { addTreatment } from '../models/actions'
+
 import Demographics from './Demographics';
 import Notes from './Notes';
 import Treatment from './Treatment';
@@ -16,8 +18,6 @@ const mapStateToProps = (state, match) => {
     treatments: state.treatments.filter(treatment => treatment.userId === id)
   };
 };
-
-// class P
 
 const patientView = ({ match, patient, notes, treatments }) => (
   <div className='patient'>
@@ -36,13 +36,69 @@ const patientView = ({ match, patient, notes, treatments }) => (
   </div>
 );
 
-patientView.propTypes = {
-  match: PropTypes.object.isRequired,
+const mapDispatchToState = (dispatch) => {
+  return {
+    addTreatment: id => {
+      dispatch(addTreatment(treatment));
+    }
+  };
+};
+
+class PatientClass extends React.Component {
+  constructor(props) {
+    super(props);
+    // console.log('patientComponent constructor props:', props);
+  }
+
+  addTreatmentClick(event) {
+    event.preventDefault();
+    console.log('clicked!');
+    const treatment = {
+      userId: '5',
+      name: 'Krypton',
+      dose: '13g',
+      notes: 'watch the world float to the dark side of the moon',
+      action: '1',
+      datetime: '8/12/17 8:00'
+    }
+    console.log(treatment);
+    addTreatment(treatment);
+  }
+
+  render() {
+    // console.log('patientComponent render this:', this);
+    const patient = this.props.patient;
+    const notes = this.props.notes;
+    const treatments = this.props.treatments;
+
+    return (
+      <div>
+        <h1>Patient View</h1>
+        <Link to={'/patients'}>Back to Patients List</Link>
+        <Demographics
+          firstName={patient.firstName}
+          lastName={patient.lastName}
+          sex={patient.sex}
+          dob={patient.birthdate}
+          age={patient.age}
+        />
+        <Notes notes={notes} />
+        <Treatment treatments={treatments} addTreatment={this.addTreatmentClick} />
+      </div>
+    );
+  }
+};
+
+PatientClass.propTypes = {
   patient: PropTypes.object.isRequired,
   notes: PropTypes.array.isRequired,
   treatments: PropTypes.array.isRequired
 };
 
-const patientComponent = connect(mapStateToProps)(patientView);
+patientView.propTypes = {
+  match: PropTypes.object.isRequired,
+}
+
+const patientComponent = connect(mapStateToProps, mapDispatchToState)(PatientClass);
 
 export default patientComponent;
