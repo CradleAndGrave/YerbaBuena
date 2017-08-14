@@ -6,10 +6,11 @@ import PropTypes from 'prop-types';
 const Demographics = props => (
   <div>
     <hr />
-    <div>Patient name: { props.firstName } { props.lastName }</div>
-    <div>Sex: { props.sex }</div>
-    <div>Birthdate: { props.dob }</div>
-    <div>Age: { props.age } </div>
+
+    <div><label>Patient name:</label> { props.firstName } { props.lastName }</div>
+    <div><label>Sex:</label> { props.sex }</div>
+    <div><label>Birthdate:</label> { props.dob }</div>
+    <div><label>Age:</label> { props.age } </div>
     <hr />
   </div>
 );
