@@ -72,7 +72,7 @@ class PatientClass extends React.Component {
     const treatments = this.props.treatments;
 
     return (
-      <div>
+      <div className='patient'>
         <h1>Patient View</h1>
         <Link to={'/patients'}>Back to Patients List</Link>
         <Demographics
