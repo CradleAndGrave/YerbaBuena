@@ -39,24 +39,24 @@ const addPatient = ({ userType, providerId, firstName, lastName, sex, birthdate,
   };
 };
 
-const addNote = ({ userId, body, datetime }) => {
+const addNote = (note) => {
   return {
     type: ADD_NOTE,
-    userId,
-    body,
-    datetime
+    userId: note.userId,
+    body: note.body,
+    datetime: note.datetime
   };
 };
 
-const addTreatment = ({ userId, name, dose, note, action, datetime }) => {
+const addTreatment = (treatment) => {
   return {
     type: ADD_TREATMENT,
-    userId,
-    name,
-    dose,
-    notes,
-    action,
-    datetime
+    userId: treatment.userId,
+    name: treatment.name,
+    dose: treatment.dose,
+    notes: treatment.notes,
+    action: treatment.action,
+    datetime: treatment.datetime
   };
 };
 
