@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Treatment = ({ treatments }) => (
+const Treatment = ({ treatments, addTreatment }) => (
   <div>
+    {console.log(addTreatment)}
     <hr />
     <h3>Current Treatment:</h3>
     <table>
@@ -27,16 +28,16 @@ const Treatment = ({ treatments }) => (
     </table>
 
     <h3>Add Treatment:</h3>
-    <form>
+    <form onSubmit={addTreatment}>
       <select>
         <option value="apples">Apple</option>
         <option value="pear">Pear</option>
         <option value="orange">Orange</option>
         <option value="prune">Prune</option>
       </select>
-      <input type="text" placeholder="What Dosage?" />
-      <input type="text" placeholder="Any Notes?" />
-      <button type="button">Add</button>
+      <input name="dose" type="text" placeholder="What Dosage?" />
+      <input name="notes" type="text" placeholder="Any Notes?" />
+      <button type="submit">Add</button>
     </form>
     <h4>Recommendation:</h4>
     <table>
