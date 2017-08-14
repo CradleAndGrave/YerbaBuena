@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 const Treatment = ({ treatments, addTreatment }) => (
   <div>
-    {console.log(addTreatment)}
     <hr />
     <h3>Current Treatment:</h3>
     <table>
@@ -29,12 +28,7 @@ const Treatment = ({ treatments, addTreatment }) => (
 
     <h3>Add Treatment:</h3>
     <form onSubmit={addTreatment}>
-      <select>
-        <option value="apples">Apple</option>
-        <option value="pear">Pear</option>
-        <option value="orange">Orange</option>
-        <option value="prune">Prune</option>
-      </select>
+      <input name="name" type="text" placeholder="What Drug?" />
       <input name="dose" type="text" placeholder="What Dosage?" />
       <input name="notes" type="text" placeholder="Any Notes?" />
       <button type="submit">Add</button>
@@ -43,9 +37,9 @@ const Treatment = ({ treatments, addTreatment }) => (
     <table>
       <tbody>
         <tr>
-          <td>Pears</td>
-          <td>200g/day</td>
-          <td><button type="button">Add</button></td>
+          <td>Kryptonite</td>
+          <td>13g/day</td>
+          <td><button type="button" onClick={addTreatment}>Add</button></td>
         </tr>
       </tbody>
     </table>

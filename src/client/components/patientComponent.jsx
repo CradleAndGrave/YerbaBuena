@@ -19,64 +19,60 @@ const mapStateToProps = (state, match) => {
   };
 };
 
-const patientView = ({ match, patient, notes, treatments }) => (
-  <div className='patient'>
-    <h1>Patient View</h1>
-    <Link to={'/'}>Back to Patients List</Link>
-    <Demographics
-      firstName={patient.firstName}
-      lastName={patient.lastName}
-      sex={patient.sex}
-      dob={patient.birthdate}
-      age={patient.age}
-    />
-    <Notes notes={notes} />
-    <Treatment treatments={treatments} />
-
-    <br />
-    <h3>ID: {match.params.id}</h3>
-    <p>{JSON.stringify(match)}</p>
-    <p>{JSON.stringify(patient)}</p>
-    <p>{JSON.stringify(treatments)}</p>
-    <br />
-
-  </div>
-);
-
 const mapDispatchToState = (dispatch) => {
   return {
-    addTreatment: id => {
+    myAddTreatment: (treatment) => {
       dispatch(addTreatment(treatment));
     }
   };
 };
 
+// const patientView = ({ match, patient, notes, treatments }) => (
+//   <div className='patient'>
+//     <h1>Patient View</h1>
+//     <Link to={'/'}>Back to Patients List</Link>
+//     <Demographics
+//       firstName={patient.firstName}
+//       lastName={patient.lastName}
+//       sex={patient.sex}
+//       dob={patient.birthdate}
+//       age={patient.age}
+//     />
+//     <Notes notes={notes} />
+//     <Treatment treatments={treatments} />
+
+//     <br />
+//     <h3>ID: {match.params.id}</h3>
+//     <p>{JSON.stringify(match)}</p>
+//     <p>{JSON.stringify(patient)}</p>
+//     <p>{JSON.stringify(treatments)}</p>
+//     <br />
+
+//   </div>
+// );
+
 class PatientClass extends React.Component {
   constructor(props) {
     super(props);
-    // console.log('patientComponent constructor props:', props);
+    this.myAddTreatment = this.props.myAddTreatment.bind(this);
   }
 
   addTreatmentClick(event) {
     event.preventDefault();
-    console.log('clicked!');
     const treatment = {
-      userId: '5',
-      name: 'Krypton',
-      dose: '13g',
-      notes: 'watch the world float to the dark side of the moon',
-      action: '1',
-      datetime: '8/12/17 8:00'
+      userId: 5,
+      name: 'Kryptonite',
+      dose: '13g/day',
+      notes: '',
+      action: 1,
+      datetime: '8/14/17 13:00'
     }
-    console.log(treatment);
-    addTreatment(treatment);
+    console.log('treatment', treatment);
+    this.myAddTreatment(treatment);
   }
 
   render() {
-    // console.log('patientComponent render this:', this);
     const patient = this.props.patient;
-    const notes = this.props.notes;
-    const treatments = this.props.treatments;
 
     return (
       <div>
@@ -89,8 +85,8 @@ class PatientClass extends React.Component {
           dob={patient.birthdate}
           age={patient.age}
         />
-        <Notes notes={notes} />
-        <Treatment treatments={treatments} addTreatment={this.addTreatmentClick} />
+        <Notes match={this.props.match} />
+        <Treatment match={this.props.match} treatments={this.props.treatments} addTreatment={this.addTreatmentClick.bind(this)} />
       </div>
     );
   }
@@ -102,9 +98,9 @@ PatientClass.propTypes = {
   treatments: PropTypes.array.isRequired
 };
 
-patientView.propTypes = {
-  match: PropTypes.object.isRequired,
-}
+// patientView.propTypes = {
+//   match: PropTypes.object.isRequired,
+// }
 
 const patientComponent = connect(mapStateToProps, mapDispatchToState)(PatientClass);
 

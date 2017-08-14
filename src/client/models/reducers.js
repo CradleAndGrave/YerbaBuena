@@ -82,7 +82,7 @@ const notes = (state: notesType = initialState.notes, action: Object) => {
   switch (action.type) {
     case 'ADD_NOTE':
       return [...state, {
-        userId: action.id,
+        userId: action.userId,
         body: action.body,
         datetime: action.datetime
       }];
@@ -95,7 +95,7 @@ const treatments = (state: treatmentsType = initialState.treatments, action: Obj
   switch (action.type) {
     case 'ADD_TREATMENT':
       return [...state, {
-        id: action.userId,
+        userId: action.userId,
         name: action.name,
         dose: action.dose,
         notes: action.notes,
