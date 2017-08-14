@@ -6,14 +6,14 @@ import Patient from './Patient';
 import User from './newPatient';
 
 const Patients = ({ patients }) => (
-    <div className="patientList">
+  <div className="patientList">
     <h1>Patient List</h1>
     {patients.map(patient =>
       (<div role="presentation" key={ patient.userId } >
         <Patient key={ patient.userId } patient={ patient } />
       </div>)
-                 )}
-      <User />
+    )}
+    <User />
   </div>
 );
 

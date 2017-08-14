@@ -1,7 +1,7 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import ButtonInstance from './ButtonInstance';
-import { BrowserRouter as Router, Route, Link, Redirect, Switch } from 'react-router-dom';
 
 
 const SignUp = () => (
@@ -11,6 +11,5 @@ const SignUp = () => (
     <p>Already registered? <Link to={'/login'}>Sign in</Link></p>
   </div>
 );
-
 
 export default SignUp;

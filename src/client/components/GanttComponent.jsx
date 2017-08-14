@@ -14,21 +14,21 @@ class GanttComponent extends Component {
     this.logTaskUpdate = this.logTaskUpdate.bind(this);
     this.logLinkUpdate = this.logLinkUpdate.bind(this);
   }
-  
-  addMessage(message) {
-    var messages = this.state.messages.slice();
-    var prevKey = messages.length ? messages[0].key: 0;
 
-    messages.unshift({key: prevKey + 1, message});
-    if(messages.length > 40){
+  addMessage(message) {
+    const messages = this.state.messages.slice();
+    const prevKey = messages.length ? messages[0].key : 0;
+
+    messages.unshift({ key: prevKey + 1, message });
+    if (messages.length > 40) {
       messages.pop();
     }
-    this.setState({messages});
+    this.setState({ messages });
   }
 
   logTaskUpdate(id, mode, task) {
-    let text = task && task.text ? ` (${task.text})`: '';
-    let message = `Task ${mode}: ${id} ${text}`;
+    const text = task && task.text ? ` (${task.text})` : '';
+    const message = `Task ${mode}: ${id} ${text}`;
     this.addMessage(message);
   }
 
@@ -37,21 +37,21 @@ class GanttComponent extends Component {
     if (link) {
       message += ` ( source: ${link.source}, target: ${link.target} )`;
     }
-    this.addMessage(message)
+    this.addMessage(message);
   }
 
   handleZoomChange(zoom) {
     this.setState({
       currentZoom: zoom
     });
-  }  
-  
+  }
+
   render() {
     return (
       <div>
         <Toolbar
-            zoom={this.state.currentZoom}
-            onZoomChange={this.handleZoomChange}
+          zoom={this.state.currentZoom}
+          onZoomChange={this.handleZoomChange}
         />
         <div className="gantt-container">
           <Gantt

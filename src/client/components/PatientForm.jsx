@@ -1,13 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import $ from 'jquery';
-import {Button, FormControl} from 'react-bootstrap'
+import { Button, FormControl } from 'react-bootstrap';
 
 class PatientForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-    };
+    this.state = {};
     this.onSubmitForm = this.onSubmitForm.bind(this);
     this.onInputChange = this.onInputChange.bind(this);
   }
@@ -20,6 +19,7 @@ class PatientForm extends React.Component {
       data: JSON.stringify(this.state),
       contentType: 'application/json',
       success: (data) => {
+        // eslint-disable-next-line
         console.log(data);
       }
     });
