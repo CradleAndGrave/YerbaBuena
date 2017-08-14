@@ -30,14 +30,14 @@ const mapStateToProps = (state, match) => {
            }))}
   };
 };
- 
+
 const patientView = ({ match, patient, notes, treatments, data }) => (
   <div className='patient'>
     <h1>Patient View</h1>
     <Link to={'/'}>Back to Patients List</Link>
 
     <GanttComponent inputData={data} />
-  
+
     <Demographics
       firstName={patient.firstName}
       lastName={patient.lastName}
@@ -58,30 +58,6 @@ const mapDispatchToState = (dispatch) => {
     }
   };
 };
-
-// const patientView = ({ match, patient, notes, treatments }) => (
-//   <div className='patient'>
-//     <h1>Patient View</h1>
-//     <Link to={'/'}>Back to Patients List</Link>
-//     <Demographics
-//       firstName={patient.firstName}
-//       lastName={patient.lastName}
-//       sex={patient.sex}
-//       dob={patient.birthdate}
-//       age={patient.age}
-//     />
-//     <Notes notes={notes} />
-//     <Treatment treatments={treatments} />
-
-//     <br />
-//     <h3>ID: {match.params.id}</h3>
-//     <p>{JSON.stringify(match)}</p>
-//     <p>{JSON.stringify(patient)}</p>
-//     <p>{JSON.stringify(treatments)}</p>
-//     <br />
-
-//   </div>
-// );
 
 class PatientClass extends React.Component {
   constructor(props) {
@@ -118,6 +94,7 @@ class PatientClass extends React.Component {
           age={patient.age}
         />
         <Notes match={this.props.match} />
+        <GanttComponent inputData={this.props.data} />
         <Treatment match={this.props.match} treatments={this.props.treatments} addTreatment={this.addTreatmentClick.bind(this)} />
       </div>
     );

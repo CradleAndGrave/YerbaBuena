@@ -26,7 +26,7 @@ const Treatment = ({ treatments, addTreatment }) => (
       </tbody>
     </table>
 
-    <h3>Add Treatment:</h3>
+    <h4>Add Treatment:</h4>
     <form className="treatment" onSubmit={addTreatment}>
       <input name="name" type="text" placeholder="What Drug?" />
       <input name="dose" type="text" placeholder="What Dosage?" />
