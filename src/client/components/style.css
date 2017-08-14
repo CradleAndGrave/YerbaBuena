@@ -6,6 +6,7 @@ body {
   background-color: #E2F3FF;
   color: #002626 !important;
   font-family: 'Open Sans', sans-serif !important;
+  padding-top: 60px;
 }
 
 hr {
@@ -66,6 +67,7 @@ th, td {
 
 .navbar {
   background-color: #002626;
+  border-radius: 0;
 }
 
 .patient {

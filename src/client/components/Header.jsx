@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Link, Redirect, Switch } from 'react-ro
 
 
 const Header = () => (
-  <Navbar className="navbar" inverse collapseOnSelect>
+  <Navbar className="navbar navbar-fixed-top" inverse collapseOnSelect>
     <Navbar.Header>
       <Navbar.Brand className="brand">
         <Link to="/">Yerba Buena</Link>
