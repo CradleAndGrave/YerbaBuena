@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Pacifico');
+
 .authContainer {
   max-width: 400px;
   margin: 0 auto;
+  background-color: #E2F3FF;
+  padding: 20px;
 }
 
 .authContainer h1 {
@@ -10,6 +14,14 @@
 
 .authContainer p {
   text-align: right;
+}
+
+body {
+  background-size: cover;
+  height: auto;
+  background-color: #E2F3FF;
+  color: #002626 !important;
+  font-family: 'Open Sans', sans-serif !important;
 }
 
 .patient {
@@ -26,6 +38,45 @@
   margin: 0 auto;
 }
 
+a {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 .patientList h1 {
   text-align: center;
+}
+
+.patientLink {
+  color: #002626;
+}
+
+.providerButton{
+  margin: 5px 0;
+}
+
+.navbar {
+  background-color: #002626;
+}
+
+.brand {
+  font-family: 'Pacifico', cursive !important;
+  color: #95C623 !important;
+}
+
+.providerButton{
+  background-color: #0E4749 !important;
+}
+
+.submit {
+  margin: 5px 0 5px 250px;
+  text-align: right;
+}
+
+.well {
+  background-color: #C7E0EF;
+}
+
+.logout {
+  color: #fff;
 }
