@@ -8,8 +8,8 @@ import LogIn from './LogIn';
 import PatientList from './PatientList';
 
 const App = () =>
-  <div>
-    <PatientList />
+      <div>
+      <PatientList />
   </div>;
 
 

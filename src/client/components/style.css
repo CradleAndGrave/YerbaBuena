@@ -92,6 +92,121 @@ th, td {
   text-align: center;
 }
 
+.chart {
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+}
+ 
+.axis path,.axis line {
+	fill: none;
+	stroke: #000;
+	shape-rendering: crispEdges;
+}
+ 
+.bar {
+	fill: #33b5e5;
+}
+ 
+.bar-failed {
+	fill: #CC0000;
+}
+ 
+.bar-running {
+	fill: #669900;
+}
+ 
+.bar-succeeded {
+	fill: #33b5e5;
+}
+ 
+.bar-killed {
+	fill: #ffbb33;
+}
+ 
+#forkme_banner {
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 10px;
+	z-index: 10;
+	padding: 10px 50px 10px 10px;
+	color: #fff;
+	background:
+		url('http://dk8996.github.io/Gantt-Chart/images/blacktocat.png')
+		#0090ff no-repeat 95% 50%;
+	font-weight: 700;
+	box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+	border-bottom-left-radius: 2px;
+	border-bottom-right-radius: 2px;
+	text-decoration: none;
+}
+
+.gantt-container {
+  height: 500px;
+  width: 100%;
+}
+
+.zoom-bar {
+  background: #fafafa;
+  border-bottom: 2px solid #828282;
+  height: 40px;
+  line-height: 40px;
+  padding: 5px 10px;
+}
+
+.radio-label {
+  background: #bdc3c7;
+  box-shadow: inset -2px -2px #acb2b7;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Tahoma, Geneva, sans-serif;
+  font-size: 15px;
+  height: 30px;
+  line-height: 30px;
+  margin-left: 6px;
+  text-align: center;
+  width: 70px;
+}
+
+.radio-label > input[type=radio] {
+  height: 0;
+  margin: 0;
+  visibility: hidden;
+  width: 0;
+}
+
+.radio-label-active {
+  background: #9ea4a8;
+  box-shadow: none;
+}
+
+.gantt-container {
+  height: 500px;
+  width: 100%;
+}
+
+.message-area {
+  background: #ebebeb;
+  border: 1px solid #a4a4a4;
+  font-family: Courier, monospace;
+  height: 200px;
+  overflow: auto;
+  padding: 10px;
+}
+
+.message-area ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.message-area li:before {
+  content: "\003e";
+  padding-right: 10px;
+}
+
 .providerButton{
   margin: 5px 0;
   background-color: #0E4749 !important;
@@ -109,13 +224,4 @@ th, td {
 .well {
   background-color: #C7E0EF;
 }
-
-
-
-
-
-
-
-
-
 
