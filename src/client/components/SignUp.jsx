@@ -12,8 +12,5 @@ const SignUp = () => (
   </div>
 );
 
-// SignUp.propTypes = {
-//   signup: PropTypes.arrayOf(PropTypes.shape).isRequired,
-// };
 
 export default SignUp;

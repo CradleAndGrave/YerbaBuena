@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 const Treatment = ({ treatments }) => (
   <div>
     <hr />
-    <h3>Current Treatment:</h3>
-    <table>
+    <h3 >Current Treatment</h3>
+    <table className="treatment">
       <tbody>
         <tr>
           <th />
-          <th>Perscribed</th>
+          <th>Prescribed</th>
           <th>Dosage</th>
           <th>Notes</th>
           <th>Date Time</th>
@@ -26,8 +26,8 @@ const Treatment = ({ treatments }) => (
       </tbody>
     </table>
 
-    <h3>Add Treatment:</h3>
-    <form>
+    <h4>Add Treatment:</h4>
+    <form className="treatment">
       <select>
         <option value="apples">Apple</option>
         <option value="pear">Pear</option>
@@ -39,7 +39,7 @@ const Treatment = ({ treatments }) => (
       <button type="button">Add</button>
     </form>
     <h4>Recommendation:</h4>
-    <table>
+    <table className="treatment">
       <tbody>
         <tr>
           <td>Pears</td>
@@ -49,8 +49,8 @@ const Treatment = ({ treatments }) => (
       </tbody>
     </table>
 
-    <h3>Treatment History:</h3>
-    <table>
+    <h4>Treatment History:</h4>
+    <table className="treatmentHx">
       <tbody>
         <tr>
           <th>Action</th>
@@ -70,7 +70,6 @@ const Treatment = ({ treatments }) => (
         )}
       </tbody>
     </table>
-    <hr />
   </div>
 );
 

@@ -6,11 +6,12 @@ import Note from './Note';
 
 const Notes = ({ notes }) => (
   <div>
-    ({notes.map(note =>
+    <h3>Encounter Notes</h3>
+    {notes.map(note =>
       (<div key={ note.datetime }>
         <Note note={ note } />
       </div>)
-    )})
+    )}
   </div>
 );
 

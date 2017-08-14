@@ -34,6 +34,7 @@ const Root = () => (
           <Route exact path="/" render={() => <Redirect to="/patients" />} />
           <Route path="/login" component={ LogIn }/>
           <Route path="/signup" component={ SignUp }/>
+          <Route path="/logout" component={ LogIn }/>
           <PrivateRoute exact path="/patients" component={ PatientList } />
           <PrivateRoute path="/patients/:id" component={ patientComponent } />
         </Switch>

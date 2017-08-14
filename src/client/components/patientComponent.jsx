@@ -33,13 +33,6 @@ const patientView = ({ match, patient, notes, treatments }) => (
     <Notes notes={notes} />
     <Treatment treatments={treatments} />
 
-    <br />
-    <h3>ID: {match.params.id}</h3>
-    <p>{JSON.stringify(match)}</p>
-    <p>{JSON.stringify(patient)}</p>
-    <p>{JSON.stringify(treatments)}</p>
-    <br />
-
   </div>
 );
 
