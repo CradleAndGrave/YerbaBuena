@@ -1,8 +1,14 @@
 // @flow
-import type { patientsType, notesType, treatmentsType } from './stateType';
+import type { userType, patientsType, notesType, treatmentsType } from './stateType';
 
 const initialState =
       {
+        user: {
+          username: null,
+          password: null,
+          specialty: null,
+          isAuthenticated: false
+        },
         patients: [
           { userId: 1, userType: 1, providerId: 3, firstName: 'Ash', lastName: 'Woodall', sex: 'female', birthdate: '', age: '' },
           { userId: 2, userType: 1, providerId: 6, firstName: 'Zeus', lastName: 'Esquivel', sex: 'male', birthdate: '', age: '' },
@@ -24,6 +30,35 @@ const initialState =
           { userId: 1, body: 'great hair', datetime: '08/11/17 14:01' }
         ]
       };
+
+const user = (state: userType = initialState.user, action: Object) => {
+  switch (action.type) {
+    case 'LOGIN':
+      return Object.assign({}, ...state, {
+        username: action.username,
+        password: action.password,
+        specialty: action.specialty,
+        isAuthenticated: true
+      });
+    case 'SIGNUP':
+      return Object.assign({}, ...state, {
+        username: action.username,
+        password: action.password,
+        specialty: action.specialty,
+        isAuthenticated: true
+      });
+    case 'LOGOUT':
+      return Object.assign({}, ...state, {
+        username: null,
+        password: null,
+        specialty: null,
+        isAuthenticated: false
+      });
+    default:
+      return state;
+  }
+}
+
 
 const patients = (state: patientsType = initialState.patients, action: Object) => {
   switch (action.type) {
@@ -72,4 +107,4 @@ const treatments = (state: treatmentsType = initialState.treatments, action: Obj
   }
 };
 
-export { patients, notes, treatments };
+export { user, patients, notes, treatments };

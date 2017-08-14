@@ -1,12 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import $ from 'jquery';
+import {Button, FormControl} from 'react-bootstrap'
+import { signupUser } from '../models/actions';
+import { withRouter } from 'react-router-dom';
+import Redirect from 'react-router-dom/Redirect';
 
 class ProviderForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      username: '',
+      password: '',
+      specialty: '',
+      isAuthenticated: false
     };
     this.onSubmit = this.onSubmit.bind(this);
     this.onInputChange = this.onInputChange.bind(this);
@@ -20,7 +28,8 @@ class ProviderForm extends React.Component {
       data: JSON.stringify(this.state),
       contentType: 'application/json',
       success: (data) => {
-        console.log(data);
+        this.props.onSignup(this.state);
+        this.setState({ isAuthenticated: true })
       }
 
     });
@@ -33,20 +42,32 @@ class ProviderForm extends React.Component {
   }
 
   render() {
+    const { from } = this.props.location.state || { from: { pathname: '/' } }
+    const { isAuthenticated } = this.state
+
+    if (isAuthenticated) {
+      return (
+        <Redirect to={ from } />
+      )
+    }
+
     return (
       <form onSubmit={this.onSubmit}>
-        <input onChange={this.onInputChange} type="text" placeholder="username" name="username" />
-        <br />
-        <input onChange={this.onInputChange} type="text" placeholder="password" name="password" />
-        <br />
-        <input onChange={this.onInputChange} type="text" placeholder="birthday" name="birhtday" />
-        <br />
-        <input onChange={this.onInputChange} type="text" placeholder="sex" name="sex" />
-        <br />
-        <input type="submit" />
+        <FormControl onChange={this.onInputChange} type="text" placeholder="username" name="username" />
+        <FormControl onChange={this.onInputChange} type="text" placeholder="password" name="password" />
+        <FormControl onChange={this.onInputChange} type="text" placeholder="specialty" name="specialty" />
+        <Button type="submit">Submit</Button>
       </form>
     );
   }
 }
 
-export default ProviderForm;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onSignup: (state) => {
+      dispatch(signupUser(state));
+    }
+  };
+};
+
+export default withRouter(connect(null, mapDispatchToProps)(ProviderForm));

@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import { patients, notes, treatments } from './reducers';
+import { user, patients, notes, treatments } from './reducers';
 
 const allReducers = combineReducers({
-  patients, notes, treatments
+  user, patients, notes, treatments
 });
 
 export default allReducers;
