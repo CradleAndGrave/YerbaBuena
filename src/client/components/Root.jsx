@@ -16,7 +16,6 @@ import PrivateRoute from './PrivateRoute';
 import SignUp from './SignUp';
 import LogIn from './LogIn';
 
-
 // This window.__ thing makes Redux DevTools work in development!
 const store = createStore(
   allReducers,
@@ -27,7 +26,7 @@ const Root = () => (
   <Provider store={store}>
     <Router>
       <div>
-        <Header />
+    <Header />
         <Switch>
           <Route exact path="/" render={() => <Redirect to="/patients" />} />
           <Route path="/login" component={ LogIn }/>

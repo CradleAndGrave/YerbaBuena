@@ -29,7 +29,6 @@ const Treatment = ({ treatments, addTreatment }) => (
     <h3>Add Treatment:</h3>
     <form className="treatment" onSubmit={addTreatment}>
       <input name="name" type="text" placeholder="What Drug?" />
-    <h4>Add Treatment:</h4>
       <input name="dose" type="text" placeholder="What Dosage?" />
       <input name="notes" type="text" placeholder="Any Notes?" />
       <button type="submit">Add</button>
