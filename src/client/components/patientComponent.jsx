@@ -8,21 +8,35 @@ import Demographics from './Demographics';
 import Notes from './Notes';
 import Treatment from './Treatment';
 
+import GanttComponent from './GanttComponent';
+
 const mapStateToProps = (state, match) => {
   const id = Number(match.match.params.id);
   return {
     patient: state.patients.filter(patient => patient.userId === id)[0],
     notes: state.notes.filter(note => note.userId === id),
-    treatments: state.treatments.filter(treatment => treatment.userId === id)
+    treatments: state.treatments.filter(treatment => treatment.userId === id),
+    data: {data:
+           state.treatments
+           .filter(treatment => treatment.userId === id)
+           .map(treatment => ({
+             id: treatment.userId,
+             text: treatment.name,
+             start_date: treatment.datetime,
+             duration: Math.round(Math.random()*10) + 1,
+             progress: (Math.round(Math.random()*10) + 1) / 10
+           }))}
   };
 };
+ 
 
-// class P
-
-const patientView = ({ match, patient, notes, treatments }) => (
+const patientView = ({ match, patient, notes, treatments, data }) => (
   <div className='patient'>
     <h1>Patient View</h1>
     <Link to={'/'}>Back to Patients List</Link>
+
+    <GanttComponent inputData={data} />
+  
     <Demographics
       firstName={patient.firstName}
       lastName={patient.lastName}
@@ -32,13 +46,6 @@ const patientView = ({ match, patient, notes, treatments }) => (
     />
     <Notes notes={notes} />
     <Treatment treatments={treatments} />
-
-    <br />
-    <h3>ID: {match.params.id}</h3>
-    <p>{JSON.stringify(match)}</p>
-    <p>{JSON.stringify(patient)}</p>
-    <p>{JSON.stringify(treatments)}</p>
-    <br />
 
   </div>
 );
