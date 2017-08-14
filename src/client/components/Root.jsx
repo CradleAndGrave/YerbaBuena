@@ -4,13 +4,12 @@ import { Provider } from 'react-redux';
 // eslint-disable-next-line
 import { BrowserRouter as Router, Route, Link, Redirect, Switch } from 'react-router-dom';
 import { createStore } from 'redux';
-//import 'bootstrap/dist/css/bootstrap.css';
-import allReducers from '../models/index';
 
 import css from './style.css'
 
 import App from './App';
 import Header from './Header';
+import allReducers from '../models/index';
 import PatientList from './PatientList';
 import patientComponent from './patientComponent';
 import PrivateRoute from './PrivateRoute';
@@ -23,7 +22,6 @@ const store = createStore(
   // eslint-disable-next-line
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
-//   <Route path="/patient/:id?" component={PatientView} />
 const Root = () => (
   <Provider store={store}>
     <Router>
