@@ -54,7 +54,7 @@ class PatientClass extends React.Component {
       dose: '13g/day',
       notes: '',
       action: 1,
-      datetime: '8/14/17 13:00'
+      datetime: null
     };
     // eslint-disable-next-line
     console.log('treatment', treatment);
@@ -77,11 +77,7 @@ class PatientClass extends React.Component {
         />
         <Notes match={this.props.match} />
         <GanttComponent inputData={this.props.data} />
-        <Treatment
-          match={this.props.match}
-          treatments={this.props.treatments}
-          addTreatment={this.addTreatmentClick.bind(this)}
-        />
+        <Treatment match={this.props.match} />
       </div>
     );
   }

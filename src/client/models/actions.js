@@ -44,7 +44,7 @@ const addNote = (note) => {
     type: ADD_NOTE,
     userId: note.userId,
     body: note.body,
-    datetime: note.datetime
+    datetime: note.datetime || Date()
   };
 };
 
@@ -56,7 +56,7 @@ const addTreatment = (treatment) => {
     dose: treatment.dose,
     notes: treatment.notes,
     action: treatment.action,
-    datetime: treatment.datetime
+    datetime: treatment.datetime || Date()
   };
 };
 

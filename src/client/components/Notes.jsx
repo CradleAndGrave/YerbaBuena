@@ -29,7 +29,7 @@ class NotesClass extends React.Component {
     this.state = {
       userId: Number(this.props.match.params.id),
       body: '',
-      datetime: 'Now'
+      datetime: null
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.addNoteClick = this.props.addNoteClick.bind(this);
