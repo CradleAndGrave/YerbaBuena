@@ -57,7 +57,7 @@ const user = (state: userType = initialState.user, action: Object) => {
     default:
       return state;
   }
-}
+};
 
 
 const patients = (state: patientsType = initialState.patients, action: Object) => {

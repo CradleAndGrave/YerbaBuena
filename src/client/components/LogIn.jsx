@@ -1,7 +1,7 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import ButtonInstance from './ButtonInstance';
-import { BrowserRouter as Router, Route, Link, Redirect, Switch } from 'react-router-dom';
 
 const LogIn = () => (
   <div className="authContainer">

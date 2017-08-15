@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Note from './Note';
 import { connect } from 'react-redux';
 import { Button, FormControl } from 'react-bootstrap';
+import Note from './Note';
 import { addNote } from '../models/actions';
 
 // eslint-disable-next-line arrow-body-style
@@ -29,12 +29,11 @@ class NotesClass extends React.Component {
     this.state = {
       userId: Number(this.props.match.params.id),
       body: '',
-      datetime: 'Now'
-    }
-
+      datetime: null
+    };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.addNoteClick = this.props.addNoteClick.bind(this);
-  };
+  }
 
   handleInputChange(event) {
     const target = event.target;
@@ -49,20 +48,27 @@ class NotesClass extends React.Component {
   render() {
     return (
       <div>
-        {this.props.notes.length === 0 ? <p>There are no notes about this patient.</p> : this.props.notes.map(note =>
-          (<div key={ note.datetime }>
-            <Note note={ note } />
-          </div>)
-        )}
+        {this.props.notes.length === 0 ?
+          <p>There are no notes about this patient.</p> :
+          this.props.notes.map(note =>
+            (<div key={ note.datetime }>
+              <Note note={ note } />
+            </div>))}
         <FormControl
           name="body"
           placeholder="Add a note"
           value={ this.state.body }
-          onChange={ this.handleInputChange }>
-        </FormControl>
-        <Button bsStyle="primary" type="button" onClick={() => this.addNoteClick(this.state)}>Add</Button>
-      </div>    
-    )
+          onChange={ this.handleInputChange }
+        />
+        <Button
+          bsStyle="primary"
+          type="button"
+          onClick={() => this.addNoteClick(this.state)}
+        >
+          Add
+        </Button>
+      </div>
+    );
   }
 }
 

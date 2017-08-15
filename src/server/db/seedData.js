@@ -31,7 +31,7 @@ initialState.patients.map(patient =>
       dob: patient.birthdate,
       sex: patient.sex
     },
-    function (err, awesomeInstance) {
+    (err, awesomeInstance) => {
       if (err) {
         // eslint-disable-next-line
         console.log(err);

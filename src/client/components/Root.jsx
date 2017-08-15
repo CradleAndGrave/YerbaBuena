@@ -5,9 +5,9 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Link, Redirect, Switch } from 'react-router-dom';
 import { createStore } from 'redux';
 
-import css from './style.css'
+import css from './style.css';
 
-import App from './App';
+// import App from './App';
 import Header from './Header';
 import allReducers from '../models/index';
 import PatientList from './PatientList';
@@ -26,12 +26,12 @@ const Root = () => (
   <Provider store={store}>
     <Router>
       <div>
-    <Header />
+        <Header />
         <Switch>
           <Route exact path="/" render={() => <Redirect to="/patients" />} />
-          <Route path="/login" component={ LogIn }/>
-          <Route path="/signup" component={ SignUp }/>
-          <Route path="/logout" component={ LogIn }/>
+          <Route path="/login" component={ LogIn } />
+          <Route path="/signup" component={ SignUp } />
+          <Route path="/logout" component={ LogIn } />
           <PrivateRoute exact path="/patients" component={ PatientList } />
           <PrivateRoute path="/patients/:id" component={ patientComponent } />
         </Switch>

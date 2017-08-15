@@ -30,7 +30,7 @@ class User extends React.Component {
       [name]: value
     });
   }
-  
+
   render() {
     return (
       <div>
@@ -39,58 +39,57 @@ class User extends React.Component {
           <Grid>
             <Col xs={6} md={4}>
               <FormGroup>
-
                 <FormControl
                   name="firstName"
                   placeholder="First Name"
                   value={ this.state.firstName }
-                  onChange={ this.handleInputChange }>
-                </FormControl>
+                  onChange={ this.handleInputChange }
+                />
 
                 <FormControl
                   name="lastName"
                   placeholder="Last Name"
                   value={ this.state.lastName }
-                  onChange={ this.handleInputChange }>
-                </FormControl>
+                  onChange={ this.handleInputChange }
+                />
 
                 <FormControl
                   name="birthdate"
                   placeholder="Birthdate"
                   value={ this.state.birthdate }
-                  onChange={ this.handleInputChange }>
-                </FormControl>
+                  onChange={ this.handleInputChange }
+                />
 
                 <FormControl
                   name="sex"
                   placeholder="Sex"
                   value={ this.state.sex }
-                  onChange={ this.handleInputChange }>
-                </FormControl>
+                  onChange={ this.handleInputChange }
+                />
 
                 <FormControl
                   placeholder="age"
                   name="age"
                   value={ this.state.age }
-                  onChange={ this.handleInputChange }>
-                </FormControl>
+                  onChange={ this.handleInputChange }
+                />
 
                 <FormControl
                   name="userType"
                   placeholder="UserType: 1 for patient, 2 for provider"
                   value={ this.state.userType }
-                  onChange={ this.handleInputChange }>
-                </FormControl>
+                  onChange={ this.handleInputChange }
+                />
 
                 <Button bsStyle="primary" type="button" onClick={() => this.onPatientClick(this.state)}>Add a Patient</Button>
-                
               </FormGroup>
             </Col>
           </Grid>
         </Collapse>
       </div>
-    ) };
-};
+    );
+  }
+}
 
 User.propTypes = {
   onPatientClick: PropTypes.func.isRequired

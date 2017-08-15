@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import $ from 'jquery';
-import {Button, FormControl} from 'react-bootstrap'
-import { signupUser } from '../models/actions';
-import { withRouter } from 'react-router-dom';
+import { Button, FormControl } from 'react-bootstrap';
 import Redirect from 'react-router-dom/Redirect';
+import { withRouter } from 'react-router-dom';
+
+import { signupUser } from '../models/actions';
 
 class ProviderForm extends React.Component {
   constructor(props) {
@@ -27,9 +28,9 @@ class ProviderForm extends React.Component {
       url: '/providerAuth/register',
       data: JSON.stringify(this.state),
       contentType: 'application/json',
-      success: (data) => {
+      success: () => {
         this.props.onSignup(this.state);
-        this.setState({ isAuthenticated: true })
+        this.setState({ isAuthenticated: true });
       }
 
     });
@@ -42,13 +43,13 @@ class ProviderForm extends React.Component {
   }
 
   render() {
-    const { from } = this.props.location.state || { from: { pathname: '/' } }
-    const { isAuthenticated } = this.state
+    const { from } = this.props.location.state || { from: { pathname: '/' } };
+    const { isAuthenticated } = this.state;
 
     if (isAuthenticated) {
       return (
         <Redirect to={ from } />
-      )
+      );
     }
 
     return (
@@ -71,3 +72,8 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default withRouter(connect(null, mapDispatchToProps)(ProviderForm));
+
+ProviderForm.propTypes = {
+  location: PropTypes.object.isRequired,
+  // onSignup: PropTypes.function.isRequired
+};
